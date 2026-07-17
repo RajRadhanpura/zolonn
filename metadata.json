@@ -1,0 +1,6 @@
+{
+  "name": "Zolon Hardware",
+  "description": "Premium architectural hardware, glass railing systems, and luxury construction fittings.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

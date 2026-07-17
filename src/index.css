@@ -1,0 +1,50 @@
+@import "tailwindcss";
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+
+@theme {
+  --font-sans: "Montserrat", sans-serif;
+  --font-display: "Playfair Display", serif;
+  --font-body: "Plus Jakarta Sans", sans-serif;
+  --color-gold-50: #fcf9f2;
+  --color-gold-100: #f7eed7;
+  --color-gold-200: #ebdcae;
+  --color-gold-300: #dcbe7c;
+  --color-gold-400: #cca04f;
+  --color-gold-500: #e4b438; /* Custom Gold accent */
+  --color-gold-600: #ae8128;
+  --color-gold-700: #885f1e;
+  --color-gold-800: #624217;
+  --color-gold-900: #462d11;
+  --color-gold-950: #291807;
+}
+
+/* Base resets & styling support for luxury animations and transitions */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: #ffffff;
+  color: #171717;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-sans);
+}
+
+.luxury-underline {
+  position: relative;
+}
+
+.luxury-underline::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 60px;
+  height: 2px;
+  background-color: var(--color-gold-500);
+}
+
