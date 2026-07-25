@@ -6,10 +6,13 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Menu, X, PhoneCall, Shield, Sparkles } from 'lucide-react';
+import logo from '../assets/logo.png';
+import { useSectionNav } from '../hooks/useSectionNav';
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const goToSection = useSectionNav();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -21,10 +24,7 @@ export default function Header() {
 
   const scrollToSection = (id: string) => {
     setIsMobileMenuOpen(false);
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
+    goToSection(id);
   };
 
   return (
@@ -32,8 +32,8 @@ export default function Header() {
       <header
         id="main-header"
         className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${isScrolled
-            ? 'bg-white shadow-md py-4 border-b border-gray-100'
-            : 'bg-transparent py-6'
+          ? 'bg-white shadow-md py-4 border-b border-gray-100'
+          : 'bg-transparent py-6'
           }`}
       >
         <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
@@ -42,27 +42,25 @@ export default function Header() {
             className="flex items-center space-x-3 cursor-pointer group"
             onClick={() => scrollToSection('hero')}
           >
-            
-            <div className="flex items-center text-xl font-bold tracking-tighter">
-              <img
-                src="https://zolonhardware.com/wp-content/uploads/2019/02/Logo-Zolon.png"
-                alt="Luxury Architecture Facade with Structural Glass"
-                className="object-cover object-center"
-                referrerPolicy="no-referrer"
-                width="150px"
-              />
-            </div>
+            <img
+              src={logo}
+              alt="ZOLON Hardware Logo"
+              width={150}
+              height={150}
+              className={`transition-all duration-300 ${isScrolled ? 'brightness-0' : ''}`}
+            />
           </div>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
-            {['Products', 'Projects', 'Process', 'Why Zolon', 'Contact'].map((item) => {
+            {['Products', 'Projects', 'Why Zolon', 'Contact'].map((item) => {
               const targetId = item.toLowerCase().replace(' ', '-');
               return (
                 <button
                   key={item}
                   onClick={() => scrollToSection(targetId)}
-                  className="font-sans font-medium text-xs tracking-widest text-white hover:text-gold-500 uppercase transition-colors relative py-1 group"
+                  className={`font-sans font-medium text-xs tracking-widest hover:text-gold-500 uppercase transition-colors relative py-1 group ${isScrolled ? 'text-gray-900' : 'text-gray-300'
+                    }`}
                 >
                   {item}
                   <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-gold-500 group-hover:w-full transition-all duration-300" />
@@ -73,12 +71,11 @@ export default function Header() {
 
           {/* Consultation Button */}
           <div className="hidden lg:flex items-center space-x-6">
-            
             <button
               onClick={() => scrollToSection('contact')}
               className="bg-gold-500 hover:bg-gold-600 text-white font-sans font-semibold text-xs tracking-wider uppercase px-5 py-2.5 rounded-sm transition-all shadow-sm hover:shadow-md hover:-translate-y-0.5"
             >
-              Consult an Engineer
+              ASK TO EXPERT
             </button>
           </div>
 

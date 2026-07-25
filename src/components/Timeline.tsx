@@ -20,7 +20,7 @@ export default function Timeline() {
               How We Work
             </span>
           </div>
-          <h2 className="font-sans font-bold text-3xl sm:text-4xl text-gray-900 tracking-tight">
+          <h2 className="font-sans font-black text-3xl sm:text-4xl text-gray-900 tracking-tight">
             Our Precision Blueprint
           </h2>
           <div className="h-0.5 w-16 bg-gold-500 mx-auto" />
@@ -39,7 +39,7 @@ export default function Timeline() {
               <div key={idx} className="space-y-6 group text-center lg:text-left">
                 {/* Timeline Node Badge with Step Number */}
                 <div className="flex justify-center lg:justify-start">
-                  <div className="w-16 h-16 rounded-none bg-white border border-gray-200 flex items-center justify-center text-lg font-sans font-bold text-gray-400 group-hover:text-white group-hover:bg-gold-500 group-hover:border-gold-500 shadow-sm transition-all duration-300">
+                  <div className="w-16 h-16 rounded-none bg-white border border-gray-200 flex items-center justify-center text-lg font-sans font-black text-gray-400 group-hover:text-white group-hover:bg-gold-500 group-hover:border-gold-500 shadow-sm transition-all duration-300">
                     {item.step}
                   </div>
                 </div>

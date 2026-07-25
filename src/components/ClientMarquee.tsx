@@ -8,26 +8,25 @@ import { ShieldCheck, Compass, Briefcase, Award, Building2 } from 'lucide-react'
 
 export default function ClientMarquee() {
   const clients = [
-    { name: 'PRESTIGE HOMES', icon: Compass },
-    { name: 'URBAN CONSTRUCT', icon: Building2 },
-    { name: 'ELITE DEVELOPERS', icon: Award },
-    { name: 'MODERN ARCH', icon: ShieldCheck },
-    { name: 'GLOBAL BUILDS', icon: Briefcase },
+    { name: 'Quality Craftsmanship', icon: Compass },
+    { name: 'Innovative Designs', icon: Building2 },
+    { name: 'Trusted Solutions', icon: Award },
+    { name: 'Expert Installation', icon: ShieldCheck },
   ];
 
   return (
     <div className="bg-gray-50 border-y border-gray-100 py-12 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
         <p className="text-center font-sans text-[10px] tracking-[0.3em] text-gold-600 font-bold uppercase mb-8">
-          TRUSTED BY ELITE ARCHITECTURE &amp; CONSTRUCTION FIRMS
+          OUR EXPERIENCE IS YOUR GAIN
         </p>
-        
+
         <div className="flex flex-wrap items-center justify-center gap-12 md:gap-20 opacity-70">
           {clients.map((client, idx) => {
             const Icon = client.icon;
             return (
-              <div 
-                key={idx} 
+              <div
+                key={idx}
                 className="flex items-center space-x-3 hover:opacity-100 hover:text-gold-500 transition-all duration-300 group"
               >
                 <Icon className="w-5 h-5 text-gray-400 group-hover:text-gold-500 transition-colors" />

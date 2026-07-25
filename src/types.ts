@@ -3,13 +3,26 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+export interface RailingChartRow {
+  glass_height: string;
+  balcony_length: Record<string, boolean | 'gold' | 'both' | null>;
+}
+
+export interface RailingChart {
+  title: string;
+  columns: string[];
+  rows: RailingChartRow[];
+}
+
 export interface Product {
   id: string;
   name: string;
-  category: 'railings' | 'door-hardware' | 'bathroom-fittings' | 'glass-fittings';
+  category: 'continue-systems' | 'profile-system' | 'bracket-cover-system' | 'glass-fittings';
   description: string;
   image: string;
+  productimage?: string;
   features: string[];
+  information?: string[];
   specs: {
     material: string;
     finish: string;
@@ -17,6 +30,7 @@ export interface Product {
     glassThickness?: string;
     durability?: string;
   };
+  chart?: RailingChart;
 }
 
 export interface TimelineItem {

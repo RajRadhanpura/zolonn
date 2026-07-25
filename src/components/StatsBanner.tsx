@@ -35,26 +35,26 @@ export default function StatsBanner() {
           {STATS.map((stat, idx) => {
             const IconComponent = getIconForIndex(idx);
             return (
-              <div 
-                key={idx} 
+              <div
+                key={idx}
                 className="text-center space-y-3 group border-r last:border-0 border-white/10 pr-4 last:pr-0"
               >
                 {/* Visual Icon Accent */}
                 <div className="inline-flex items-center justify-center w-12 h-12 rounded-sm bg-white/5 border border-white/10 mb-2 group-hover:border-gold-500 group-hover:bg-gold-500/10 transition-colors">
                   <IconComponent className="w-5 h-5 text-gold-500" />
                 </div>
-                
+
                 {/* Stat Big Number */}
-                <div className="font-sans font-bold text-4xl sm:text-5xl text-white group-hover:text-gold-500 transition-colors tracking-tight">
+                <div className="font-sans font-bold pt-4 text-4xl sm:text-5xl text-white group-hover:text-gold-500 transition-colors tracking-tight">
                   {stat.value}
                 </div>
-                
+
                 {/* Label and Sublabel */}
                 <div className="space-y-1">
-                  <h4 className="font-sans font-extrabold text-xs tracking-wider text-gray-100 uppercase">
+                  <h4 className="font-sans font-bold text-xs pt-3 tracking-wider text-gray-100 uppercase">
                     {stat.label}
                   </h4>
-                  <p className="font-sans text-[10px] text-gray-400 leading-normal font-light">
+                  <p className="font-sans text-[12px] text-white pt-3 leading-normal font-light">
                     {stat.sublabel}
                   </p>
                 </div>
