@@ -7,24 +7,28 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { ArrowDown, CornerRightDown, ChevronLeft, ChevronRight } from 'lucide-react';
 
+import photo1 from '../assets/products/photo1.jpg';
+import photo2 from '../assets/products/photo2.jpg';
+import photo3 from '../assets/products/photo3.jpg';
+
 const SLIDES = [
   {
-    url: '/src/assets/products/photo1.jpg',
+    url: photo1,
     title: 'Architectural Facades',
     subtitle: 'Structural Glass Systems'
   },
   {
-    url: '/src/assets/products/photo2.jpg',
+    url: photo2,
     title: 'Luxury Railings',
     subtitle: 'Duplex 2205 Stainless Fittings'
   },
   {
-    url: '/src/assets/products/photo3.jpg',
+    url: photo3,
     title: 'Hydraulic Systems',
     subtitle: 'Precision Patch Hardware'
   },
   {
-    url: '/src/assets/products/photo1.jpg',
+    url: photo1,
     title: 'Minimalist Balustrades',
     subtitle: 'PVD Gold Finish Precision'
   }
