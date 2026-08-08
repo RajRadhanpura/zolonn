@@ -6,6 +6,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Menu, X, PhoneCall, Shield, Sparkles } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import logo from '../assets/logo.png';
 import { useSectionNav } from '../hooks/useSectionNav';
 
@@ -31,7 +32,7 @@ export default function Header() {
     <>
       <header
         id="main-header"
-        className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${isScrolled
+        className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${isScrolled || isMobileMenuOpen
           ? 'bg-white shadow-md py-4 border-b border-gray-100'
           : 'bg-transparent py-6'
           }`}
@@ -47,26 +48,75 @@ export default function Header() {
               alt="ZOLON Hardware Logo"
               width={150}
               height={150}
-              className={`transition-all duration-300 ${isScrolled ? 'brightness-0' : ''}`}
+              className={`transition-all duration-300 ${isScrolled || isMobileMenuOpen ? 'brightness-0' : ''}`}
             />
           </div>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
-            {['Products', 'Projects', 'Why Zolon', 'Contact'].map((item) => {
-              const targetId = item.toLowerCase().replace(' ', '-');
-              return (
-                <button
-                  key={item}
-                  onClick={() => scrollToSection(targetId)}
-                  className={`font-sans font-medium text-xs tracking-widest hover:text-gold-500 uppercase transition-colors relative py-1 group ${isScrolled ? 'text-gray-900' : 'text-gray-300'
-                    }`}
-                >
-                  {item}
-                  <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-gold-500 group-hover:w-full transition-all duration-300" />
-                </button>
-              );
-            })}
+            <Link
+              to="/about-zolon"
+              onClick={() => setIsMobileMenuOpen(false)}
+              className={`font-sans font-medium text-xs tracking-widest hover:text-gold-500 uppercase transition-colors relative py-1 group ${isScrolled ? 'text-gray-900' : 'text-gray-300'
+                }`}
+            >
+              About Zolon
+              <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-gold-500 group-hover:w-full transition-all duration-300" />
+            </Link>
+            <Link
+              to="/products"
+              onClick={() => setIsMobileMenuOpen(false)}
+              className={`font-sans font-medium text-xs tracking-widest hover:text-gold-500 uppercase transition-colors relative py-1 group ${isScrolled ? 'text-gray-900' : 'text-gray-300'
+                }`}
+            >
+              Products
+              <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-gold-500 group-hover:w-full transition-all duration-300" />
+            </Link>
+            <Link
+              to="/projects"
+              onClick={() => setIsMobileMenuOpen(false)}
+              className={`font-sans font-medium text-xs tracking-widest hover:text-gold-500 uppercase transition-colors relative py-1 group ${isScrolled ? 'text-gray-900' : 'text-gray-300'
+                }`}
+            >
+              Projects
+              <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-gold-500 group-hover:w-full transition-all duration-300" />
+            </Link>
+            <Link
+              to="/why-zolon"
+              onClick={() => setIsMobileMenuOpen(false)}
+              className={`font-sans font-medium text-xs tracking-widest hover:text-gold-500 uppercase transition-colors relative py-1 group ${isScrolled ? 'text-gray-900' : 'text-gray-300'
+                }`}
+            >
+              Why Zolon
+              <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-gold-500 group-hover:w-full transition-all duration-300" />
+            </Link>
+            <Link
+              to="/architectural-hardware-in-rajkot"
+              onClick={() => setIsMobileMenuOpen(false)}
+              className={`font-sans font-medium text-xs tracking-widest hover:text-gold-500 uppercase transition-colors relative py-1 group ${isScrolled ? 'text-gray-900' : 'text-gray-300'
+                }`}
+            >
+              Architectural Hardware
+              <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-gold-500 group-hover:w-full transition-all duration-300" />
+            </Link>
+            <Link
+              to="/events"
+              onClick={() => setIsMobileMenuOpen(false)}
+              className={`font-sans font-medium text-xs tracking-widest hover:text-gold-500 uppercase transition-colors relative py-1 group ${isScrolled ? 'text-gray-900' : 'text-gray-300'
+                }`}
+            >
+              Events
+              <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-gold-500 group-hover:w-full transition-all duration-300" />
+            </Link>
+            {/* <Link
+              to="/contact-us"
+              onClick={() => setIsMobileMenuOpen(false)}
+              className={`font-sans font-medium text-xs tracking-widest hover:text-gold-500 uppercase transition-colors relative py-1 group ${isScrolled ? 'text-gray-900' : 'text-gray-300'
+                }`}
+            >
+              Contact Us
+              <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-gold-500 group-hover:w-full transition-all duration-300" />
+            </Link> */}
           </nav>
 
           {/* Consultation Button */}
@@ -81,16 +131,17 @@ export default function Header() {
 
           {/* Mobile Menu Toggle */}
           <div className="flex items-center space-x-4 md:hidden">
-            <button
-              onClick={() => scrollToSection('contact')}
+            <a
+              href="tel:+919727560994"
               className="bg-gold-500 text-white p-2 rounded-sm"
-              title="Contact"
+              title="Call Mr. Semyul Dalsaniya (+91-972 756 0994)"
+              aria-label="Call Mr. Semyul Dalsaniya"
             >
               <PhoneCall className="w-4 h-4" />
-            </button>
+            </a>
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="p-2 text-gray-800"
+              className={`p-2 transition-colors ${isScrolled || isMobileMenuOpen ? 'text-gray-900' : 'text-gray-100'}`}
               aria-label="Toggle Menu"
             >
               {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -106,24 +157,73 @@ export default function Header() {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="fixed inset-0 top-[72px] bg-white z-40 px-6 py-10 flex flex-col justify-between border-t border-gray-100 md:hidden"
+            className="fixed inset-0 top-0 bg-white z-40 px-6 pt-28 pb-10 flex flex-col justify-between overflow-y-auto md:hidden"
           >
-            <div className="space-y-6">
-              {['Products', 'Projects', 'Process', 'Why Zolon', 'Contact'].map((item) => {
+            <div className="space-y-1">
+              {/* {['Process'].map((item) => {
                 const targetId = item.toLowerCase().replace(' ', '-');
                 return (
                   <button
                     key={item}
                     onClick={() => scrollToSection(targetId)}
-                    className="block w-full text-left font-sans font-semibold text-xl tracking-wider text-gray-800 hover:text-gold-500 uppercase py-2"
+                    className="block w-full text-left font-sans font-semibold text-base tracking-wide text-gray-800 hover:text-gold-500 uppercase py-2.5"
                   >
                     {item}
                   </button>
                 );
-              })}
+              })} */}
+              <Link
+                to="/about-zolon"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="block w-full text-left font-sans font-semibold text-base tracking-wide text-gray-800 hover:text-gold-500 uppercase py-2.5"
+              >
+                About Zolon
+              </Link>
+              <Link
+                to="/products"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="block w-full text-left font-sans font-semibold text-base tracking-wide text-gray-800 hover:text-gold-500 uppercase py-2.5"
+              >
+                Products
+              </Link>
+              <Link
+                to="/projects"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="block w-full text-left font-sans font-semibold text-base tracking-wide text-gray-800 hover:text-gold-500 uppercase py-2.5"
+              >
+                Projects
+              </Link>
+              <Link
+                to="/why-zolon"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="block w-full text-left font-sans font-semibold text-base tracking-wide text-gray-800 hover:text-gold-500 uppercase py-2.5"
+              >
+                Why Zolon
+              </Link>
+              <Link
+                to="/architectural-hardware-in-rajkot"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="block w-full text-left font-sans font-semibold text-base tracking-wide text-gray-800 hover:text-gold-500 uppercase py-2.5"
+              >
+                Architectural Hardware
+              </Link>
+              <Link
+                to="/events"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="block w-full text-left font-sans font-semibold text-base tracking-wide text-gray-800 hover:text-gold-500 uppercase py-2.5"
+              >
+                Events
+              </Link>
+              <Link
+                to="/contact-us"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="block w-full text-left font-sans font-semibold text-base tracking-wide text-gray-800 hover:text-gold-500 uppercase py-2.5"
+              >
+                Contact Us
+              </Link>
             </div>
 
-            <div className="space-y-6 border-t border-gray-100 pt-8">
+            {/* <div className="space-y-6 border-t border-gray-100 pt-8">
               <div className="flex items-center space-x-3 text-sm text-gray-600">
                 <Shield className="w-5 h-5 text-gold-500" />
                 <span>Duplex 2205 Marine Grade Tested</span>
@@ -138,7 +238,7 @@ export default function Header() {
               >
                 Schedule Free Consultation
               </button>
-            </div>
+            </div> */}
           </motion.div>
         )}
       </AnimatePresence>

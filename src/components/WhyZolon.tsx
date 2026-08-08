@@ -4,41 +4,44 @@
  */
 
 import React from 'react';
-import { ShieldAlert, Compass, Hammer, Sparkles, Award, Scale } from 'lucide-react';
+import { ShieldAlert, Compass, Hammer, Sparkles, Award, Scale, ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
+
+export const WHY_ZOLON_POINTS = [
+  {
+    icon: ShieldAlert,
+    title: 'Duplex 2205 Metallurgical Superiority',
+    description: 'Twice the yield strength of ordinary 316 stainless steel. Standardized in all glass spigots to combat extreme tension stress and high salt-spray coastal environments without rusting.'
+  },
+  {
+    icon: Scale,
+    title: '0.1mm CNC Micro-Forging',
+    description: 'Forged at thousands of tons of pressure and micro-CNC milled to eliminate loose tolerances, ensuring heavy glass doors and structural partitions glide with zero vibration.'
+  },
+  {
+    icon: Sparkles,
+    title: 'Titanium PVD Molecular Finish',
+    description: 'Physical Vapor Deposition bonds pure gold-titanium alloys directly onto the molecular level of our metals. Guaranteed never to chip, flake, or tarnish over decades of use.'
+  },
+  {
+    icon: Compass,
+    title: 'Total AutoCAD & BIM Integration',
+    description: 'We supply custom Revit models, AutoCAD spec blocks, and accurate glass-drilling template sheets to eliminate contractor guesswork on active job sites.'
+  },
+  {
+    icon: Hammer,
+    title: '500,000+ Cycle Longevity Testing',
+    description: 'Our hydraulic hinges, glass door rollers, and heavy deadbolt lock cylinders undergo millions of continuous stress cycles to earn premium commercial grade-1 certifications.'
+  },
+  {
+    icon: Award,
+    title: 'Bespoke Architectural Engineering',
+    description: 'Tailored consulting to meet local building safety codes for high-load glass barriers, commercial handrails, and luxury master bath frameless setups.'
+  }
+];
 
 export default function WhyZolon() {
-  const points = [
-    {
-      icon: ShieldAlert,
-      title: 'Duplex 2205 Metallurgical Superiority',
-      description: 'Twice the yield strength of ordinary 316 stainless steel. Standardized in all glass spigots to combat extreme tension stress and high salt-spray coastal environments without rusting.'
-    },
-    {
-      icon: Scale,
-      title: '0.1mm CNC Micro-Forging',
-      description: 'Forged at thousands of tons of pressure and micro-CNC milled to eliminate loose tolerances, ensuring heavy glass doors and structural partitions glide with zero vibration.'
-    },
-    {
-      icon: Sparkles,
-      title: 'Titanium PVD Molecular Finish',
-      description: 'Physical Vapor Deposition bonds pure gold-titanium alloys directly onto the molecular level of our metals. Guaranteed never to chip, flake, or tarnish over decades of use.'
-    },
-    {
-      icon: Compass,
-      title: 'Total AutoCAD & BIM Integration',
-      description: 'We supply custom Revit models, AutoCAD spec blocks, and accurate glass-drilling template sheets to eliminate contractor guesswork on active job sites.'
-    },
-    {
-      icon: Hammer,
-      title: '500,000+ Cycle Longevity Testing',
-      description: 'Our hydraulic hinges, glass door rollers, and heavy deadbolt lock cylinders undergo millions of continuous stress cycles to earn premium commercial grade-1 certifications.'
-    },
-    {
-      icon: Award,
-      title: 'Bespoke Architectural Engineering',
-      description: 'Tailored consulting to meet local building safety codes for high-load glass barriers, commercial handrails, and luxury master bath frameless setups.'
-    }
-  ];
+  const points = WHY_ZOLON_POINTS.slice(0, 3);
 
   return (
     <section id="why-zolon" className="py-24 bg-white relative">
@@ -59,8 +62,8 @@ export default function WhyZolon() {
           </p>
         </div>
 
-        {/* Six Column Bento-grid Layout */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-0 border-t border-l border-gray-200">
+        {/* Three Column Bento-grid Layout */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-0 border-t border-l border-gray-200">
           {points.map((point, idx) => {
             const Icon = point.icon;
             return (
@@ -82,6 +85,17 @@ export default function WhyZolon() {
               </div>
             );
           })}
+        </div>
+
+        {/* Know More CTA */}
+        <div className="flex justify-center mt-12">
+          <Link
+            to="/why-zolon"
+            className="inline-flex items-center space-x-2 bg-gold-500 hover:bg-gold-600 text-white font-sans font-semibold text-xs tracking-widest uppercase px-6 py-3.5 rounded-sm transition-all shadow-sm hover:shadow-md hover:-translate-y-0.5"
+          >
+            <span>Know More</span>
+            <ArrowRight className="w-4 h-4" />
+          </Link>
         </div>
       </div>
     </section>

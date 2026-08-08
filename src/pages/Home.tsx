@@ -5,13 +5,13 @@
 
 import React, { useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
+import SEO from '../components/SEO';
 import Header from '../components/Header';
 import Hero from '../components/Hero';
 import ClientMarquee from '../components/ClientMarquee';
 import ProductShowcase from '../components/ProductShowcase';
 import StatsBanner from '../components/StatsBanner';
 import WhyZolon from '../components/WhyZolon';
-import ProjectGallery from '../components/ProjectGallery';
 import Timeline from '../components/Timeline';
 import ContactForm from '../components/ContactForm';
 import Footer from '../components/Footer';
@@ -30,6 +30,11 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-white relative selection:bg-gold-500 selection:text-white">
+      <SEO
+        title="Zolon Hardware | Premium Architectural Hardware & Railings"
+        description="ZOLON Hardware is a premier manufacturer of glass railing systems, architectural hardware, and bathroom accessories, engineered with Duplex 2205 stainless steel and PVD finishes for luxury residential and commercial projects."
+      />
+
       {/* Top Banner & Main Navigation */}
       <Header />
 
@@ -37,25 +42,22 @@ export default function Home() {
       <Hero />
 
       {/* Prestige Client List */}
-      <ClientMarquee />
+      {/* <ClientMarquee /> */}
 
       {/* Main Filterable Spec Showcase */}
-      <ProductShowcase />
+      {/* <ProductShowcase /> */}
 
       {/* Parallax Building Metrics */}
-      <StatsBanner />
+      {/* <StatsBanner /> */}
 
       {/* High-End Architectural Advantages */}
-      <WhyZolon />
-
-      {/* Real-World Glass Installations */}
-      <ProjectGallery />
+      {/* <WhyZolon /> */}
 
       {/* Steps to Completion */}
       {/* <Timeline /> */}
 
       {/* Form & Specifications Office */}
-      <ContactForm />
+      {/* <ContactForm /> */}
 
       {/* Clean Technical Footer */}
       <Footer />

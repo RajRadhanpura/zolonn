@@ -10,6 +10,7 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import ProductCard from '../components/ProductCard';
 import ProductImageGallery from '../components/ProductImageGallery';
+import SEO from '../components/SEO';
 import { PRODUCTS } from '../data';
 
 const Tick = ({ type }: { type: string | boolean | null | undefined }) => {
@@ -49,6 +50,10 @@ export default function ProductDetail() {
   if (!product) {
     return (
       <div className="min-h-screen bg-white flex flex-col">
+        <SEO
+          title="Product Not Found | Zolon Hardware"
+          description="The architectural hardware product you're looking for could not be found. Browse ZOLON's full catalog of railing systems, door fittings, and accessories."
+        />
         <Header />
         <div className="flex-grow flex flex-col items-center justify-center text-center px-6 pt-32 pb-20">
           <h1 className="font-sans font-bold text-2xl text-gray-900">Product Not Found</h1>
@@ -69,6 +74,10 @@ export default function ProductDetail() {
 
   return (
     <div className="min-h-screen bg-white">
+      <SEO
+        title={`${product.name} | Zolon Hardware`}
+        description={product.description}
+      />
       <Header />
 
       {/* Hero-style Product Banner */}
