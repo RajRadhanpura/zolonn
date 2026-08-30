@@ -139,6 +139,7 @@ export default function Header() {
             >
               <PhoneCall className="w-4 h-4" />
             </a>
+
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               className={`p-2 transition-colors ${isScrolled || isMobileMenuOpen ? 'text-gray-900' : 'text-gray-100'}`}

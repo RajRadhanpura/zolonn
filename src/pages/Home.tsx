@@ -10,11 +10,16 @@ import Header from '../components/Header';
 import Hero from '../components/Hero';
 import ClientMarquee from '../components/ClientMarquee';
 import ProductShowcase from '../components/ProductShowcase';
+import ProductCategorySlider from '../components/ProductCategorySlider';
 import StatsBanner from '../components/StatsBanner';
 import WhyZolon from '../components/WhyZolon';
 import Timeline from '../components/Timeline';
 import ContactForm from '../components/ContactForm';
 import Footer from '../components/Footer';
+import AluminumRailingRajkot from '../components/AluminumRailingRajkot';
+import WhyChooseRailing from '../components/WhyChooseRailing';
+import FAQSection from '../components/FAQSection';
+import CTASection from '../components/CTASection';
 
 export default function Home() {
   const location = useLocation();
@@ -41,8 +46,14 @@ export default function Home() {
       {/* Hero Entrance Area */}
       <Hero />
 
+      {/* Aluminum Railing Manufacturer in Rajkot */}
+      <AluminumRailingRajkot />
+
       {/* Prestige Client List */}
-      {/* <ClientMarquee /> */}
+      <ClientMarquee />
+
+      {/* Product Category Highlights Slider */}
+      <ProductCategorySlider />
 
       {/* Main Filterable Spec Showcase */}
       {/* <ProductShowcase /> */}
@@ -53,8 +64,17 @@ export default function Home() {
       {/* High-End Architectural Advantages */}
       {/* <WhyZolon /> */}
 
+      {/* Why Choose Zolon for Aluminum Railing */}
+      <WhyChooseRailing />
+
       {/* Steps to Completion */}
       {/* <Timeline /> */}
+
+      {/* Frequently Asked Questions */}
+      <FAQSection />
+
+      {/* Call To Action */}
+      <CTASection />
 
       {/* Form & Specifications Office */}
       {/* <ContactForm /> */}

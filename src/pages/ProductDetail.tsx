@@ -140,20 +140,22 @@ export default function ProductDetail() {
             </div>
 
             {/* Core Features */}
-            <div className="space-y-3 border-t border-gray-200 pt-8">
-              <h2 className="font-sans font-bold text-sm text-gray-800 uppercase tracking-wider flex items-center space-x-2">
-                <Info className="w-4 h-4 text-gold-500" />
-                <span>Core Features & Design Advantages</span>
-              </h2>
-              <ul className="grid grid-cols-1 sm:grid-cols-1 gap-2.5">
-                {product.features.map((feature, idx) => (
-                  <li key={idx} className="flex items-start space-x-2.5 font-sans text-sm text-gray-600">
-                    <span className="h-1.5 w-1.5 rounded-full bg-gold-500 shrink-0 mt-2" />
-                    <span>{feature}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
+            {product.features.length > 0 && (
+              <div className="space-y-3 border-t border-gray-200 pt-8">
+                <h2 className="font-sans font-bold text-sm text-gray-800 uppercase tracking-wider flex items-center space-x-2">
+                  <Info className="w-4 h-4 text-gold-500" />
+                  <span>Core Features & Design Advantages</span>
+                </h2>
+                <ul className="grid grid-cols-1 sm:grid-cols-1 gap-2.5">
+                  {product.features.map((feature, idx) => (
+                    <li key={idx} className="flex items-start space-x-2.5 font-sans text-sm text-gray-600">
+                      <span className="h-1.5 w-1.5 rounded-full bg-gold-500 shrink-0 mt-2" />
+                      <span>{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
 
 
             {/* Recommended Railing Length Chart */}

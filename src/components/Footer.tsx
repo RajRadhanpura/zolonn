@@ -18,6 +18,18 @@ const QUICK_LINKS = [
   { label: 'Contact Us', to: '/contact-us' }
 ];
 
+const PRODUCT_CATEGORIES = [
+  { label: 'Continue Systems', category: 'continue-systems' },
+  { label: 'Profile System', category: 'profile-system' },
+  { label: 'Bracket Cover System', category: 'bracket-cover-system' },
+  { label: 'Bracket System', category: 'glass-fittings' },
+  { label: 'Handrail & Accessories', category: 'handrail-accessories' },
+  { label: 'Aluminium Spigots', category: 'aluminium-spigots' },
+  { label: 'Balustrade System', category: 'balustrade-system' },
+  { label: 'Side Mount', category: 'side-mount' },
+  { label: 'Spigot', category: 'spigot' }
+];
+
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
@@ -72,20 +84,20 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Technical Support Col */}
+          {/* Product Categories Col */}
           <div className="lg:col-span-3 space-y-6">
             <h4 className="font-sans font-bold text-xs tracking-widest text-gray-300 uppercase">Product Categories</h4>
             <ul className="space-y-3.5 text-sm text-gray-300 font-regular">
-              {/* {['AutoCAD Spec Files', 'Revit 3D Families', 'Wind Load Charts', 'Marine Grade Testing Reports', 'Architect Privacy Accord'].map((link, idx) => (
-                <li key={idx}>
-                  <button
-                    onClick={() => scrollToSection('contact')}
+              {PRODUCT_CATEGORIES.map((cat) => (
+                <li key={cat.category}>
+                  <Link
+                    to={`/products?category=${cat.category}`}
                     className="font-sans text-gray-300 hover:text-gold-500 transition-colors text-left"
                   >
-                    {link}
-                  </button>
+                    {cat.label}
+                  </Link>
                 </li>
-              ))} */}
+              ))}
             </ul>
           </div>
 

@@ -18,7 +18,7 @@ export default function ClientMarquee() {
     <div className="bg-gray-50 border-y border-gray-100 py-12 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
         <p className="text-center font-sans text-[10px] tracking-[0.3em] text-gold-600 font-bold uppercase mb-8">
-          OUR EXPERIENCE IS YOUR GAIN
+          Our Valuable Clients
         </p>
 
         <div className="flex flex-wrap items-center justify-center gap-12 md:gap-20 opacity-70">

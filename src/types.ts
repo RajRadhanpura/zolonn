@@ -17,7 +17,7 @@ export interface RailingChart {
 export interface Product {
   id: string;
   name: string;
-  category: 'continue-systems' | 'profile-system' | 'bracket-cover-system' | 'glass-fittings';
+  category: 'continue-systems' | 'profile-system' | 'bracket-cover-system' | 'glass-fittings' | 'handrail-accessories' | 'aluminium-spigots' | 'balustrade-system' | 'side-mount' | 'spigot';
   description: string;
   image: string;
   productimage?: string;
