@@ -370,7 +370,7 @@ export default function ArchitecturalHardwarePage() {
                       <h3 className="font-sans font-semibold text-sm text-gray-900 tracking-tight uppercase">
                         {reason.title}
                       </h3>
-                      <p className="font-sans text-[13px] text-gray-700 font-light leading-relaxed">
+                      <p className="font-sans text-[13px] text-gray-700 font-medium leading-relaxed">
                         {reason.description}
                       </p>
                     </div>

@@ -24,7 +24,7 @@ export default function Timeline() {
             Our Precision Blueprint
           </h2>
           <div className="h-0.5 w-16 bg-gold-500 mx-auto" />
-          <p className="font-sans text-xs sm:text-sm text-gray-600 font-light leading-relaxed">
+          <p className="font-sans text-xs sm:text-sm text-gray-600 font-medium leading-relaxed">
             From design specifications to molecular coatings, we maintain a flawless sequence of design, manufacturing, and stress testing.
           </p>
         </div>
@@ -52,7 +52,7 @@ export default function Timeline() {
                   <h3 className="font-sans font-extrabold text-base text-gray-900 tracking-tight uppercase">
                     {item.title}
                   </h3>
-                  <p className="font-sans text-xs text-gray-600 font-light leading-relaxed max-w-sm mx-auto lg:mx-0">
+                  <p className="font-sans text-xs text-gray-600 font-medium leading-relaxed max-w-sm mx-auto lg:mx-0">
                     {item.description}
                   </p>
                 </div>
@@ -69,7 +69,7 @@ export default function Timeline() {
           <h4 className="font-sans font-bold text-sm text-gray-900 uppercase tracking-widest">
             Flawless Compliance Guaranteed
           </h4>
-          <p className="font-sans text-xs text-gray-600 leading-relaxed font-light max-w-2xl mx-auto">
+          <p className="font-sans text-xs text-gray-600 leading-relaxed font-medium max-w-2xl mx-auto">
             All Zolon structural railings, spigots, and glass standoff anchors are certified by independent testing labs to comply with the American National Standards Institute (ANSI) and local high-rise wind and barrier safety code regulations.
           </p>
         </div>

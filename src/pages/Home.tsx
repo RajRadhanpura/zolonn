@@ -18,6 +18,7 @@ import ContactForm from '../components/ContactForm';
 import Footer from '../components/Footer';
 import AluminumRailingRajkot from '../components/AluminumRailingRajkot';
 import WhyChooseRailing from '../components/WhyChooseRailing';
+import GlobalPresence from '../components/GlobalPresence';
 import FAQSection from '../components/FAQSection';
 import CTASection from '../components/CTASection';
 
@@ -66,6 +67,9 @@ export default function Home() {
 
       {/* Why Choose Zolon for Aluminum Railing */}
       <WhyChooseRailing />
+
+      {/* Global Presence */}
+      <GlobalPresence />
 
       {/* Steps to Completion */}
       {/* <Timeline /> */}

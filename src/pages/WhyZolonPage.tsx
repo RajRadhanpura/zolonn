@@ -56,7 +56,7 @@ export default function WhyZolonPage() {
 
         <div className="max-w-7xl mx-auto px-6 py-16">
           <div className="text-center max-w-2xl mx-auto mb-16 space-y-4">
-            <p className="font-sans text-md sm:text-md text-gray-800 font-light leading-relaxed">
+            <p className="font-sans text-md sm:text-md text-gray-800 font-medium leading-relaxed">
               Every clamp, lever, hinge, and spigot is engineered with zero compromises,
               blending modern minimalism with structural invincibility. Here is the full
               engineering standard behind every piece of Zolon hardware.
@@ -79,7 +79,7 @@ export default function WhyZolonPage() {
                     <h3 className="font-sans font-semibold text-md text-gray-900 tracking-tight uppercase">
                       {point.title}
                     </h3>
-                    <p className="font-sans text-[14px] text-gray-800 font-light leading-relaxed">
+                    <p className="font-sans text-[14px] text-gray-800 font-medium leading-relaxed">
                       {point.description}
                     </p>
                   </div>

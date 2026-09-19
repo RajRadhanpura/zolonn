@@ -14,8 +14,11 @@ import ProductsPage from './pages/ProductsPage';
 import ArchitecturalHardwarePage from './pages/ArchitecturalHardwarePage';
 import AboutZolonPage from './pages/AboutZolonPage';
 import EventsPage from './pages/EventsPage';
+import { useScrollReveal } from './hooks/useScrollReveal';
 
 export default function App() {
+  useScrollReveal();
+
   return (
     <Routes>
       <Route path="/" element={<Home />} />

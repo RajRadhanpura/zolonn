@@ -54,7 +54,7 @@ export default function StatsBanner() {
                   <h4 className="font-sans font-bold text-xs pt-3 tracking-wider text-gray-100 uppercase">
                     {stat.label}
                   </h4>
-                  <p className="font-sans text-[12px] text-white pt-3 leading-normal font-light">
+                  <p className="font-sans text-[12px] text-white pt-3 leading-normal font-medium">
                     {stat.sublabel}
                   </p>
                 </div>

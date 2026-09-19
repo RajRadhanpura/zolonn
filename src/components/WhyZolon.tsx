@@ -56,7 +56,7 @@ export default function WhyZolon() {
             Why Architects Specify Zolon
           </h2>
           <div className="h-0.5 w-16 bg-gold-500 mx-auto" />
-          <p className="font-sans text-md sm:text-md text-gray-800 font-light leading-relaxed">
+          <p className="font-sans text-md sm:text-md text-gray-800 font-medium leading-relaxed">
             Every clamp, lever, hinge, and spigot is engineered with zero compromises,
             blending modern minimalism with structural invincibility.
           </p>
@@ -78,7 +78,7 @@ export default function WhyZolon() {
                   <h3 className="font-sans font-semibold text-md text-gray-900 tracking-tight uppercase">
                     {point.title}
                   </h3>
-                  <p className="font-sans text-[14px] text-gray-800 font-light leading-relaxed">
+                  <p className="font-sans text-[14px] text-gray-800 font-medium leading-relaxed">
                     {point.description}
                   </p>
                 </div>

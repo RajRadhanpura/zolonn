@@ -79,7 +79,7 @@ export default function EventsPage() {
                 Acetech Exhibition 2022
               </h2>
               <div className="h-0.5 w-16 bg-gold-500" />
-              <div className="flex items-center space-x-2 text-xs text-gray-500 font-light">
+              <div className="flex items-center space-x-2 text-xs text-gray-500 font-medium">
                 <MapPin className="w-4 h-4 text-gold-500 shrink-0" />
                 <span className="font-sans font-medium text-gray-800 text-[13px]">Mumbai, Maharashtra</span>
               </div>

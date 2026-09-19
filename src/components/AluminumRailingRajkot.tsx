@@ -24,7 +24,7 @@ export default function AluminumRailingRajkot() {
                 Aluminum Railing Manufacturer in Rajkot
               </h2>
               <div className="h-0.5 w-16 bg-gold-500" />
-              <p className="font-sans text-sm sm:text-md text-gray-800 font-light leading-relaxed">
+              <p className="font-sans text-sm sm:text-md text-gray-800 font-medium leading-relaxed">
                 Zolon is an established Aluminum Railing manufacturer in Rajkot known for precision
                 engineering, modern aesthetics and long-lasting performance. With advanced manufacturing
                 facilities and a skilled team, the company supplies complete railing systems and
@@ -36,7 +36,7 @@ export default function AluminumRailingRajkot() {
               <h3 className="font-sans font-semibold text-lg text-gray-900 tracking-tight uppercase">
                 Expertise in Aluminum Glass Railing Systems
               </h3>
-              <p className="font-sans text-sm sm:text-md text-gray-800 font-light leading-relaxed">
+              <p className="font-sans text-sm sm:text-md text-gray-800 font-medium leading-relaxed">
                 Zolon focuses on integrated Aluminum Glass Railing solutions that combine strong aluminum
                 profiles with high-quality toughened glass for safety and transparency. Each railing
                 system is designed for easy installation, low maintenance and seamless coordination with
@@ -55,8 +55,8 @@ export default function AluminumRailingRajkot() {
                 </p>
               </div>
               <div className="h-12 w-px bg-gray-200" />
-              <p className="font-sans text-[13px] text-gray-600 font-light leading-relaxed max-w-xs">
-                Trusted across Rajkot and Gujarat for aluminum railing and architectural glass systems.
+              <p className="font-sans text-[13px] text-gray-600 font-medium leading-relaxed max-w-xs">
+                Trusted across pan india and internationally for aluminum railing and architectural glass systems.
               </p>
             </div>
           </div>

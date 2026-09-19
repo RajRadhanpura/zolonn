@@ -13,7 +13,19 @@ import ProductImageGallery from '../components/ProductImageGallery';
 import SEO from '../components/SEO';
 import { PRODUCTS } from '../data';
 
-const Tick = ({ type }: { type: string | boolean | null | undefined }) => {
+const FINISH_GRADIENTS: [RegExp, string][] = [
+  [/mill|natural/i, 'linear-gradient(135deg,#eef0f1 0%,#c2c6c9 52%,#dde0e2 100%)'],
+  [/anodi/i, 'linear-gradient(135deg,#dadde0 0%,#a6abb0 52%,#c4c8cb 100%)'],
+  [/powder/i, 'linear-gradient(135deg,#43464b 0%,#1f2125 52%,#34373c 100%)'],
+  [/wood/i, 'linear-gradient(135deg,#bd884f 0%,#7c4f2a 52%,#a06a39 100%)'],
+  [/pvdf/i, 'linear-gradient(135deg,#8d6b41 0%,#5a4226 52%,#74562f 100%)']
+];
+
+const finishGradient = (name: string) =>
+  FINISH_GRADIENTS.find(([pattern]) => pattern.test(name))?.[1] ??
+  'linear-gradient(135deg,#eef0f1 0%,#c2c6c9 52%,#dde0e2 100%)';
+
+const Tick =({ type }: { type: string | boolean | null | undefined }) => {
   if (!type) return null;
 
   return (
@@ -274,7 +286,20 @@ export default function ProductDetail() {
                 </div>
                 <div className="grid grid-cols-3 p-4">
                   <span className="font-semibold text-gray-700 col-span-1">Finish / Coating</span>
-                  <span className="text-gray-600 col-span-2">{product.specs.finish}</span>
+                  <div className="col-span-2 flex flex-wrap gap-x-6 gap-y-4">
+                    {product.specs.finish.split('/').map((name) => {
+                      const label = name.trim();
+                      return (
+                        <span key={label} title={label} className="flex flex-col items-center gap-2">
+                          <span
+                            className="h-11 w-11 rounded-full ring-2 ring-white shadow-md"
+                            style={{ background: finishGradient(label) }}
+                          />
+                          <span className="text-xs text-gray-600">{label}</span>
+                        </span>
+                      );
+                    })}
+                  </div>
                 </div>
                 {product.specs.loadCapacity && (
                   <div className="grid grid-cols-3 p-4">

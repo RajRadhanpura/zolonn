@@ -120,7 +120,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="max-w-xl text-gray-300 font-sans font-light text-base sm:text-lg leading-relaxed"
+            className="max-w-xl text-gray-300 font-sans font-medium text-base sm:text-lg leading-relaxed"
           >
             We are a ZOLON ARCHITECTURAL HARDWARE team of young professionals: Design, Supply and
             Build your Dreams of exterior and interiors of your loved Building / Projects.

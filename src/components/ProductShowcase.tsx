@@ -10,9 +10,9 @@ import { PRODUCTS } from '../data';
 import ProductCard from './ProductCard';
 import { Search, SlidersHorizontal, Layers, Sparkles } from 'lucide-react';
 
-type FilterCategory = 'all' | 'continue-systems' | 'profile-system' | 'bracket-cover-system' | 'glass-fittings' | 'handrail-accessories' | 'aluminium-spigots' | 'balustrade-system' | 'side-mount' | 'spigot';
+type FilterCategory = 'all' | 'continue-systems' | 'profile-system' | 'aluminium-baluster' | 'bracket-cover-system' | 'glass-fittings' | 'handrail-accessories' | 'aluminium-spigots' | 'balustrade-system' | 'side-mount' | 'spigot';
 
-const VALID_CATEGORIES: FilterCategory[] = ['all', 'continue-systems', 'profile-system', 'bracket-cover-system', 'glass-fittings', 'handrail-accessories', 'aluminium-spigots', 'balustrade-system', 'side-mount', 'spigot'];
+const VALID_CATEGORIES: FilterCategory[] = ['all', 'continue-systems', 'profile-system', 'aluminium-baluster', 'bracket-cover-system', 'glass-fittings', 'handrail-accessories', 'aluminium-spigots', 'balustrade-system', 'side-mount', 'spigot'];
 
 const PAGE_SIZE = 18;
 
@@ -67,7 +67,7 @@ export default function ProductShowcase() {
   const categories: { label: string; value: FilterCategory }[] = [
     { label: 'All', value: 'all' },
     { label: 'Continue Systems', value: 'continue-systems' },
-    { label: 'Profile System', value: 'profile-system' },
+    { label: 'Aluminium Baluster', value: 'aluminium-baluster' },
     { label: 'Bracket Cover System', value: 'bracket-cover-system' },
     { label: 'Bracket System', value: 'glass-fittings' },
     { label: 'Handrail & Accessories', value: 'handrail-accessories' },
@@ -130,7 +130,7 @@ export default function ProductShowcase() {
             Our Products
           </h2>
           <div className="h-0.5 w-16 bg-gold-500 mx-auto" />
-          <p className="font-sans text-xs sm:text-sm text-gray-600 font-light leading-relaxed">
+          <p className="font-sans text-xs sm:text-sm text-gray-600 font-medium leading-relaxed">
             Discover ZOLON's premium range of architectural hardware, expertly designed to combine strength, safety, and modern aesthetics. From glass balustrade systems and railing solutions to premium fittings and accessories.
           </p>
         </div>

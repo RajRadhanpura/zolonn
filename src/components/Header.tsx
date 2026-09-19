@@ -9,10 +9,12 @@ import { Menu, X, PhoneCall, Shield, Sparkles } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import logo from '../assets/logo.png';
 import { useSectionNav } from '../hooks/useSectionNav';
+import CatalogueModal from './CatalogueModal';
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isCatalogueOpen, setIsCatalogueOpen] = useState(false);
   const goToSection = useSectionNav();
 
   useEffect(() => {
@@ -122,10 +124,10 @@ export default function Header() {
           {/* Consultation Button */}
           <div className="hidden lg:flex items-center space-x-6">
             <button
-              onClick={() => scrollToSection('contact')}
+              onClick={() => setIsCatalogueOpen(true)}
               className="bg-gold-500 hover:bg-gold-600 text-white font-sans font-semibold text-xs tracking-wider uppercase px-5 py-2.5 rounded-sm transition-all shadow-sm hover:shadow-md hover:-translate-y-0.5"
             >
-              ASK TO EXPERT
+              Download Catalogue
             </button>
           </div>
 
@@ -222,6 +224,15 @@ export default function Header() {
               >
                 Contact Us
               </Link>
+              <button
+                onClick={() => {
+                  setIsMobileMenuOpen(false);
+                  setIsCatalogueOpen(true);
+                }}
+                className="mt-4 w-full bg-gold-500 hover:bg-gold-600 text-white font-sans font-bold text-sm tracking-widest uppercase py-4 rounded-sm text-center transition-all shadow-md"
+              >
+                Download Catalogue
+              </button>
             </div>
 
             {/* <div className="space-y-6 border-t border-gray-100 pt-8">
@@ -243,6 +254,8 @@ export default function Header() {
           </motion.div>
         )}
       </AnimatePresence>
+
+      <CatalogueModal open={isCatalogueOpen} onClose={() => setIsCatalogueOpen(false)} />
     </>
   );
 }

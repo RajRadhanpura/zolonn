@@ -1,4 +1,4 @@
-/**
+﻿/**
  * @license
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -9,24 +9,24 @@ import { Plus, Minus, HelpCircle } from 'lucide-react';
 
 const FAQS = [
   {
-    question: 'What is an Aluminum Glass Railing system?',
-    answer: 'An Aluminum Glass Railing system combines extruded aluminum profiles with toughened safety glass panels to create a strong, transparent barrier for balconies, staircases and terraces. Zolon engineers each profile for easy installation and long-term durability.'
+    question: 'What materials do you use for your architectural hardware?',
+    answer: 'We manufacture premium architectural hardware using high-quality materials such as stainless steel, aluminium, brass and other durable alloys. Our hardware is designed to offer excellent strength, corrosion resistance, long-lasting performance and refined aesthetics — ideal for residential, commercial and architectural applications.'
   },
   {
-    question: 'Do you manufacture custom railing sizes for Rajkot projects?',
-    answer: 'Yes. Zolon fabricates aluminum railing profiles and glass panels to match your exact balcony, staircase and terrace dimensions, ensuring a precise fit for residential, commercial and industrial sites across Rajkot and Gujarat.'
+    question: 'Do you provide installation support?',
+    answer: 'Yes. ZOLON Architectural Hardware provides professional product guidance and technical support for architects, designers, dealers, contractors and installers. Our team assists with product selection, application requirements and installation guidance to ensure reliable performance across every project.'
   },
   {
-    question: 'How durable is Zolon Aluminum Railing?',
-    answer: 'Our aluminum profiles are corrosion-resistant, low-maintenance and finished for long-lasting performance in Indian climate conditions, making them suitable for both indoor and outdoor installations.'
+    question: 'What is your warranty policy?',
+    answer: 'We provide warranty coverage on selected architectural hardware products, subject to the specific product and application. Our products are manufactured with a focus on durability, precision and long-term performance. Contact our team for model-specific warranty terms and product support.'
   },
   {
-    question: 'Do you work with architects, builders and interior designers?',
-    answer: 'Absolutely. We regularly support architects, interior designers, builders and homeowners with specification guidance, product samples and on-site installation coordination for Aluminum Glass Railing projects.'
+    question: 'What types of architectural hardware do you manufacture?',
+    answer: 'ZOLON Architectural Hardware offers a comprehensive range of architectural hardware solutions, including door hardware, glass hardware, shower hardware, handles, hinges, fittings, accessories and other architectural components. Our products are suitable for residential, commercial, hospitality and architectural projects.'
   },
   {
-    question: 'What areas do you serve?',
-    answer: 'Zolon is based in Rajkot and serves clients throughout Gujarat, supplying complete railing systems and architectural hardware for homes, offices, showrooms and industrial projects.'
+    question: 'Do you offer custom finishes and customised hardware?',
+    answer: 'Yes. We offer a range of premium finishes and customised solutions to meet specific architectural and design requirements. Depending on the product, options may include customised colours, surface finishes, sizes and configurations, allowing our hardware to complement different interior and architectural styles.'
   }
 ];
 
@@ -82,7 +82,7 @@ export default function FAQSection() {
                       transition={{ duration: 0.25, ease: 'easeInOut' }}
                       className="overflow-hidden"
                     >
-                      <p className="font-sans text-[14px] text-gray-700 font-light leading-relaxed px-6 pl-[3.25rem] pb-6">
+                      <p className="font-sans text-[14px] text-gray-700 font-medium leading-relaxed px-6 pl-[3.25rem] pb-6">
                         {faq.answer}
                       </p>
                     </motion.div>

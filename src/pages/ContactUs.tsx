@@ -99,7 +99,7 @@ export default function ContactUs() {
                 Head Office &amp; Manufacturing Unit
               </h2>
               <div className="h-0.5 w-16 bg-gold-500" />
-              <p className="font-sans text-xs sm:text-sm text-gray-600 font-light leading-relaxed flex items-start space-x-2 max-w-2xl">
+              <p className="font-sans text-xs sm:text-sm text-gray-600 font-medium leading-relaxed flex items-start space-x-2 max-w-2xl">
                 <MapPin className="w-4 h-4 text-gold-500 shrink-0 mt-0.5" />
                 <span>
                   Survey No.202, Plot No.20, Narmada Pipe Gate, Essen Road, Industrial Area, Veraval(Shapar), Rajkot, Gujarat &ndash; 360024

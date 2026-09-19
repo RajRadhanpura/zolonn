@@ -282,7 +282,7 @@ export const PRODUCTS: Product[] = [
   {
     id: 'zcr-05',
     name: 'Medium ZCR-05',
-    category: 'profile-system',
+    category: 'continue-systems',
     description: 'Concealed profile, top mount railing system with slim-line, elegant styling. Top, ceiling, or conceal-mounted for high structural strength and maximum security, optimally suited for concrete upstand applications.',
     productimage: zcr05V2,
     image: zcr05V1,

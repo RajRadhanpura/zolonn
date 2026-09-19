@@ -53,7 +53,7 @@ export default function ContactForm() {
                 Architect &amp; Builder Specifications Desk
               </h2>
               <div className="h-0.5 w-16 bg-gold-500" />
-              <p className="font-sans text-xs sm:text-sm text-gray-600 font-light leading-relaxed">
+              <p className="font-sans text-xs sm:text-sm text-gray-600 font-medium leading-relaxed">
                 Connect directly with our engineering department. We specialize in providing custom PVD finishes, wind load sizing sheets, and certified structural blueprints for luxury real estate ventures.
               </p>
             </div>
@@ -67,7 +67,7 @@ export default function ContactForm() {
                 <div>
                   <h4 className="font-sans font-bold text-xs text-gray-800 tracking-wider uppercase">Engineering Hotline</h4>
                   <p className="font-sans text-sm text-gray-900 font-medium mt-1">+91-972 756 0994</p>
-                  {/* <p className="font-sans text-[11px] text-gray-500 font-light mt-0.5">Mon - Fri: 8:00 AM - 6:00 PM EST</p> */}
+                  {/* <p className="font-sans text-[11px] text-gray-500 font-medium mt-0.5">Mon - Fri: 8:00 AM - 6:00 PM EST</p> */}
                 </div>
               </div>
 
@@ -78,7 +78,7 @@ export default function ContactForm() {
                 <div>
                   <h4 className="font-sans font-bold text-xs text-gray-800 tracking-wider uppercase">Direct Email Desk</h4>
                   <p className="font-sans text-sm text-gray-900 font-medium mt-1">info@zolonhardware.com</p>
-                  {/* <p className="font-sans text-[11px] text-gray-500 font-light mt-0.5">Architect CAD block requests: dwg@zolonhardware.com</p> */}
+                  {/* <p className="font-sans text-[11px] text-gray-500 font-medium mt-0.5">Architect CAD block requests: dwg@zolonhardware.com</p> */}
                 </div>
               </div>
 
@@ -89,7 +89,7 @@ export default function ContactForm() {
                 <div>
                   <h4 className="font-sans font-bold text-xs text-gray-800 tracking-wider uppercase">Head Office</h4>
                   <p className="font-sans text-sm text-gray-900 font-medium mt-1">Survey No.202, Plot No.20, Narmada Pipe Gate, Essen Road, Industrial Area, Veraval(Shapar), Rajkot, Gujarat – 360024</p>
-                  {/* <p className="font-sans text-[11px] text-gray-500 font-light mt-0.5">Miami Design District, FL 33137</p> */}
+                  {/* <p className="font-sans text-[11px] text-gray-500 font-medium mt-0.5">Miami Design District, FL 33137</p> */}
                 </div>
               </div>
             </div>
@@ -100,7 +100,7 @@ export default function ContactForm() {
                 <ShieldCheck className="w-5 h-5 shrink-0" />
                 <h5 className="font-sans font-bold text-xs tracking-wider uppercase">Architect Privacy Accord</h5>
               </div>
-              <p className="font-sans text-[11px] text-gray-600 leading-normal font-light">
+              <p className="font-sans text-[11px] text-gray-600 leading-normal font-medium">
                 Your submitted blueprints, floorplans, and email logs are treated under strict proprietary confidentiality guidelines. We never distribute architectural files without written consent.
               </p>
             </div> */}

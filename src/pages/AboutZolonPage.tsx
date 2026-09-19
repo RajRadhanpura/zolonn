@@ -12,6 +12,13 @@ import SEO from '../components/SEO';
 import photo1 from '../assets/products/photo1.jpg';
 import photo2 from '../assets/products/photo2.jpg';
 import photo3 from '../assets/products/photo3.jpg';
+import certificate1 from '../assets/certificate1.jpg';
+import certificate2 from '../assets/certificate2.jpg';
+
+const CERTIFICATES = [
+  { img: certificate1, title: 'Test Summary — ASTM E2353 Load Tests' },
+  { img: certificate2, title: 'ISO 9001:2015 Quality Management' }
+];
 
 const ABOUT_STATS = [
   { icon: Calendar, value: '15+', label: 'Years of Experience' },
@@ -78,7 +85,7 @@ export default function AboutZolonPage() {
               Delivering Symmetrical Elegance for Aesthetic Resonance.
             </h2>
             <div className="h-0.5 w-16 bg-gold-500" />
-            <p className="font-sans text-sm text-gray-700 leading-relaxed">
+            <p className="font-sans text-sm text-gray-700 leading-relaxed font-medium">
               ZOLON has been an innovative and professional company engaged in research, manufacture and marketing of fittings for railing systems, architectural hardware and bathroom accessories. ZOLON provides fittings of high quality and provides consulting services to the architectural industries. Through many years since development, ZOLON achieves a good reputation in Construction Industry and Hardware Industry.
             </p>
           </div>
@@ -144,7 +151,7 @@ export default function AboutZolonPage() {
             &ldquo;Unique value can only be created by professionalism, speculation has no future.&rdquo;
           </p>
           <div className="h-0.5 w-16 bg-gold-500 mx-auto" />
-          <p className="font-sans text-sm text-gray-700 leading-relaxed max-w-2xl mx-auto">
+          <p className="font-sans text-sm text-gray-700 leading-relaxed max-w-2xl mx-auto font-medium">
             This motto is practiced by ZOLON personnel at all levels, ranging from senior executives to the new entry employees. In the continuous quest for constant technology development, higher quality and better services, today ZOLON has become the prominent and largest supplier of architectural hardware, railings and bathroom fittings.
           </p>
         </section>
@@ -157,7 +164,7 @@ export default function AboutZolonPage() {
                 Mission and Vision
               </h2>
               <div className="h-0.5 w-16 bg-gold-500" />
-              <p className="font-sans text-sm text-gray-700 leading-relaxed">
+              <p className="font-sans text-sm text-gray-700 leading-relaxed font-medium">
                 Our goal is to increase the value of buildings and to enhance the living and working environment of people worldwide. We achieve this together with our partners by providing innovative and sustainable architectural solutions for the building envelope.
               </p>
             </div>
@@ -167,16 +174,16 @@ export default function AboutZolonPage() {
                 Our Philosophy
               </h2>
               <div className="h-0.5 w-16 bg-gold-500" />
-              <p className="font-sans text-sm text-gray-700 leading-relaxed">
+              <p className="font-sans text-sm text-gray-700 leading-relaxed font-medium">
                 No need to say any more about innovation or product quality. These characteristics, inherent to the company, need no further proof. What about the people and their working methods? Simple&hellip;
               </p>
-              <p className="font-sans text-sm text-gray-700 leading-relaxed">
+              <p className="font-sans text-sm text-gray-700 leading-relaxed font-medium">
                 ZOLON is a multinational with the attitude of a small firm of craftsmen.
               </p>
-              <p className="font-sans text-sm text-gray-700 leading-relaxed">
+              <p className="font-sans text-sm text-gray-700 leading-relaxed font-medium">
                 What matters most is a passion for the job and a desire to overcome challenges. We invent, we create, we produce. We design the best solutions to meet the needs of all architects and customers, whether large or small. All Directors&rsquo; philosophy has passed on to their team and partners. They describe this way of working in a few words:
               </p>
-              <p className="font-sans font-semibold text-sm text-gray-900 leading-relaxed border-l-2 border-gold-500 pl-4">
+              <p className="font-sans font-semibold text-sm text-gray-900 leading-relaxed font-medium border-l-2 border-gold-500 pl-4">
                 Let people do their thing. Develop a passion for the product, a sense of collaboration and complete confidence.
               </p>
             </div>
@@ -203,7 +210,7 @@ export default function AboutZolonPage() {
               A Suitable Balustrade for Every Space
             </h2>
             <div className="h-0.5 w-16 bg-gold-500" />
-            <p className="font-sans text-sm text-gray-700 leading-relaxed">
+            <p className="font-sans text-sm text-gray-700 leading-relaxed font-medium">
               It is not without good reason that glass balustrades have become a trend. They provide an aesthetic, low-maintenance, durable solution for homes, offices and public spaces. There is a wide choice of suitable systems for every space, all of which are stylish, safe and easy to assemble.
             </p>
 
@@ -211,7 +218,7 @@ export default function AboutZolonPage() {
               <h3 className="font-sans font-bold text-sm text-gray-900 uppercase tracking-wider">
                 Now Available Without Assembly
               </h3>
-              <p className="font-sans text-sm text-gray-700 leading-relaxed">
+              <p className="font-sans text-sm text-gray-700 leading-relaxed font-medium">
                 You can now also order the ZOLON systems and assemble them yourself. This gives you even more options! Maybe you know exactly which profile you require, because the architect has included it in the design. However, it is also possible that it only says &lsquo;Glass balustrade&rsquo;. You can then choose one yourself with the aid of this product brochure or you can ask our consultants for advice.
               </p>
             </div>
@@ -240,24 +247,29 @@ export default function AboutZolonPage() {
                 Our Certifications
               </h2>
               <div className="h-0.5 w-16 bg-gold-500 mx-auto" />
-              <p className="font-sans text-sm text-gray-700 leading-relaxed">
+              <p className="font-sans text-sm text-gray-700 leading-relaxed font-medium">
                 Every ZOLON product is backed by internationally recognized quality and safety standards.
               </p>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-3xl mx-auto">
-              {[photo1, photo3].map((img, idx) => (
-                <div key={idx} className="bg-white border border-gray-200 p-4 space-y-3">
-                  <div className="aspect-[4/3] overflow-hidden bg-gray-100">
+              {CERTIFICATES.map((cert) => (
+                <div key={cert.title} className="bg-white border border-gray-200 p-4 space-y-3">
+                  <a
+                    href={cert.img}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block aspect-[3/4] overflow-hidden bg-gray-100"
+                  >
                     <img
-                      src={img}
-                      alt={`Zolon Certificate ${idx + 1}`}
-                      className="w-full h-full object-cover"
-                      referrerPolicy="no-referrer"
+                      src={cert.img}
+                      alt={cert.title}
+                      className="w-full h-full object-contain hover:scale-[1.02] transition-transform duration-300"
+                      loading="lazy"
                     />
-                  </div>
+                  </a>
                   <p className="font-sans text-[11px] text-gray-500 text-center uppercase tracking-wider">
-                    Certificate {idx + 1}
+                    {cert.title}
                   </p>
                 </div>
               ))}
@@ -271,7 +283,7 @@ export default function AboutZolonPage() {
             <h2 className="font-sans font-bold text-2xl sm:text-3xl text-gray-900 tracking-tight">
               Partner with ZOLON
             </h2>
-            <p className="font-sans text-sm text-gray-700 leading-relaxed max-w-2xl">
+            <p className="font-sans text-sm text-gray-700 leading-relaxed max-w-2xl font-medium">
               Speak with our engineering desk to specify the right architectural hardware for your next project.
             </p>
             <Link

@@ -58,7 +58,7 @@ export default function Footer() {
             </div>
 
             <p className="font-sans text-sm text-gray-300 leading-relaxed font-light">
-              Pioneers in high-strength Duplex 2205 metallurgical hardware and PVD titanium coatings, supplying elite glass railings and architectural fittings to high-end developers across the globe.
+              Rajkot-based manufacturer of premium architectural hardware and aluminum glass railing systems, including door and glass hardware, shower fittings, handles, hinges and accessories for residential, commercial and hospitality projects.
             </p>
 
             {/* <div className="flex items-center space-x-2 text-xs font-semibold tracking-wider text-gold-400 border p-3.5 w-fit border-color-gold-500 rounded-sm">
@@ -126,7 +126,7 @@ export default function Footer() {
         <div className="pt-6 flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="space-y-1.5 text-center md:text-left">
             <p className="font-sans text-[14px] text-gray-300 font-regular">
-              &copy; {currentYear} Zolon Hardware Industries Ltd.
+              &copy; {currentYear} Zolon Architectural Hardware. All rights reserved.
             </p>
           </div>
 

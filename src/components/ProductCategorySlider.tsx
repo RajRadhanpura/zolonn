@@ -77,7 +77,7 @@ export default function ProductCategorySlider() {
             Explore Our Product Range
           </h2>
           <div className="h-0.5 w-16 bg-gold-500 mx-auto" />
-          <p className="font-sans text-xs sm:text-sm text-gray-600 font-light leading-relaxed">
+          <p className="font-sans text-xs sm:text-sm text-gray-600 font-medium leading-relaxed">
             From continue systems and glass balustrades to spigots, brackets, and handrail accessories &mdash;
             every ZOLON category is engineered for strength, safety, and modern aesthetics. Browse a highlight
             from each range below.
