@@ -88,7 +88,7 @@ export default function ContactForm() {
                 </div>
                 <div>
                   <h4 className="font-sans font-bold text-xs text-gray-800 tracking-wider uppercase">Head Office</h4>
-                  <p className="font-sans text-sm text-gray-900 font-medium mt-1">Survey No.202, Plot No.20, Narmada Pipe Gate, Essen Road, Industrial Area, Veraval(Shapar), Rajkot, Gujarat – 360024</p>
+                  <p className="font-sans text-sm text-gray-900 font-medium mt-1">Vrundawan Gate, 2 & 3, Rajkot - Gondal Hwy, near Innovative Mould Works, opp. Leuva Patel Samaj, Pipaliya, Gujarat 360311.</p>
                   {/* <p className="font-sans text-[11px] text-gray-500 font-medium mt-0.5">Miami Design District, FL 33137</p> */}
                 </div>
               </div>

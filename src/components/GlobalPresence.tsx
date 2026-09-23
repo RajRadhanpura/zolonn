@@ -21,13 +21,12 @@ interface Location {
 // Placeholder data: edit this list to change the chips, markers and stats.
 const LOCATIONS: Location[] = [
   { city: 'Rajkot', country: 'India', lat: 22.3039, lng: 70.8022, hq: true },
-  { city: 'Ahmedabad', country: 'India', lat: 23.0225, lng: 72.5714 },
-  { city: 'Surat', country: 'India', lat: 21.1702, lng: 72.8311 },
-  { city: 'Mumbai', country: 'India', lat: 19.076, lng: 72.8777 },
-  { city: 'Pune', country: 'India', lat: 18.5204, lng: 73.8567 },
-  { city: 'Delhi', country: 'India', lat: 28.6139, lng: 77.209 },
-  { city: 'Bengaluru', country: 'India', lat: 12.9716, lng: 77.5946 },
-  { city: 'Hyderabad', country: 'India', lat: 17.385, lng: 78.4867 }
+  { city: 'Kathmandu', country: 'Nepal', lat: 27.7172, lng: 85.324 },
+  { city: 'Thimphu', country: 'Bhutan', lat: 27.4728, lng: 89.639 },
+  { city: 'Colombo', country: 'Sri Lanka', lat: 6.9271, lng: 79.8612 },
+  { city: 'Male', country: 'Maldives', lat: 4.1755, lng: 73.5093 },
+  { city: 'Dubai', country: 'UAE', lat: 25.2048, lng: 55.2708 },
+  { city: 'Lagos', country: 'Nigeria', lat: 6.5244, lng: 3.3792 }
 ];
 
 const HQ = LOCATIONS.find((l) => l.hq)!;
@@ -238,14 +237,16 @@ export default function GlobalPresence() {
             <div className="h-0.5 w-16 bg-gold-500" />
             <p className="font-sans text-[15px] text-gray-600 leading-relaxed max-w-md">
               Headquartered in {HQ.city}, Gujarat &mdash; Zolon delivers premium architectural
-              hardware &amp; aluminum glass railing systems to clients across India and beyond.
+              hardware &amp; aluminum glass railing systems to clients across India and
+              international markets including Nepal, Bhutan, Sri Lanka, the Maldives, the UAE and
+              Nigeria.
             </p>
           </div>
 
           <div className="flex gap-10">
             <div>
-              <div className="font-sans font-bold text-3xl text-gray-900">{CITY_COUNT}+</div>
-              <div className="font-sans text-xs text-gray-500 mt-1">Cities Served</div>
+              <div className="font-sans font-bold text-3xl text-gray-900">{CITY_COUNT}</div>
+              <div className="font-sans text-xs text-gray-500 mt-1">Locations Served</div>
             </div>
             <div>
               <div className="font-sans font-bold text-3xl text-gray-900">{COUNTRY_COUNT}+</div>

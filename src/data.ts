@@ -4,6 +4,21 @@
  */
 
 import { Product, TimelineItem, StatItem, ProjectItem, TestimonialItem } from './types';
+import projTrishlacity from './assets/project/Trishlacity -Zirakpur.jpg';
+import projGreenLotusUtsav from './assets/project/Green Lotus Utsav-Zirakpur.jpg';
+import projFlora11 from './assets/project/Flora 11 -Morbi.jpg';
+import projKukrejaEastInfinty from './assets/project/KukrejaEast Infinty-Nagpur.jpg';
+import projKukrejaTheOne from './assets/project/KukrejaThe One -Nagpur.jpg';
+import projAnjaneyaCrest from './assets/project/AnjaneyaCrest -Nagpur.jpg';
+import projCasaEmpyrean from './assets/project/Casa Empyrean -Amravati.jpg';
+import projTheEmpire from './assets/project/The Empire -Nashik.jpg';
+import projOneAkshar from './assets/project/One Akshar-Mumbai.jpg';
+import projAksharheight from './assets/project/Aksharheight -Rajkot.jpg';
+import projVinayakPlatina from './assets/project/VinayakPlatina-Varanasi.jpg';
+import projAlekhyaGrand from './assets/project/AlekhyaGrand -Vijayawada.jpg';
+import projCllaroUrbanGrandeur from './assets/project/CllaroUrban Grandeur –Mira road, Mumbai.jpg';
+import projMMLakeCity from './assets/project/MM LakeCity-Vapi.jpg';
+import projTeam4Nyla from './assets/project/Team4 Nyla-Hyderabad.jpg';
 import zcr01r from './assets/products/photo2.jpg';
 import zcr01 from './assets/products/zcr01.jpg';
 import zcr02Image from './assets/products/photo3.jpg';
@@ -2291,25 +2306,109 @@ export const STATS: StatItem[] = [
 
 export const PROJECTS: ProjectItem[] = [
   {
-    id: 'proj-1',
-    title: 'The Grand Horizon Estate',
-    category: 'Glass Railings & Custom Levers',
-    location: 'Malibu, California',
-    image: 'https://images.unsplash.com/photo-1613490493576-7fde63acd811?q=80&w=1200'
+    id: 'proj-trishlacity',
+    title: 'Trishlacity',
+    category: 'Aluminum Glass Railing',
+    location: 'Zirakpur',
+    image: projTrishlacity
   },
   {
-    id: 'proj-2',
-    title: 'Apex Financial Tower',
-    category: 'Structural Glass Patch Fittings',
-    location: 'Singapore District',
-    image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1200'
+    id: 'proj-green-lotus-utsav',
+    title: 'Green Lotus Utsav',
+    category: 'Aluminum Glass Railing',
+    location: 'Zirakpur',
+    image: projGreenLotusUtsav
   },
   {
-    id: 'proj-3',
-    title: 'Onyx Marina Penthouse',
-    category: 'Sliding Shower Systems & Pivots',
-    location: 'Dubai Marina, UAE',
-    image: 'https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?q=80&w=1200'
+    id: 'proj-flora-11',
+    title: 'Flora 11',
+    category: 'Aluminum Glass Railing',
+    location: 'Morbi',
+    image: projFlora11
+  },
+  {
+    id: 'proj-kukreja-east-infinty',
+    title: 'Kukreja East Infinty',
+    category: 'Aluminum Glass Railing',
+    location: 'Nagpur',
+    image: projKukrejaEastInfinty
+  },
+  {
+    id: 'proj-kukreja-the-one',
+    title: 'Kukreja The One',
+    category: 'Aluminum Glass Railing',
+    location: 'Nagpur',
+    image: projKukrejaTheOne
+  },
+  {
+    id: 'proj-anjaneya-crest',
+    title: 'Anjaneya Crest',
+    category: 'Aluminum Glass Railing',
+    location: 'Nagpur',
+    image: projAnjaneyaCrest
+  },
+  {
+    id: 'proj-casa-empyrean',
+    title: 'Casa Empyrean',
+    category: 'Aluminum Glass Railing',
+    location: 'Amravati',
+    image: projCasaEmpyrean
+  },
+  {
+    id: 'proj-the-empire',
+    title: 'The Empire',
+    category: 'Aluminum Glass Railing',
+    location: 'Nashik',
+    image: projTheEmpire
+  },
+  {
+    id: 'proj-one-akshar',
+    title: 'One Akshar',
+    category: 'Aluminum Glass Railing',
+    location: 'Mumbai',
+    image: projOneAkshar
+  },
+  {
+    id: 'proj-akshar-height',
+    title: 'Akshar Height',
+    category: 'Aluminum Glass Railing',
+    location: 'Rajkot',
+    image: projAksharheight
+  },
+  {
+    id: 'proj-vinayak-platina',
+    title: 'Vinayak Platina',
+    category: 'Aluminum Glass Railing',
+    location: 'Varanasi',
+    image: projVinayakPlatina
+  },
+  {
+    id: 'proj-alekhya-grand',
+    title: 'Alekhya Grand',
+    category: 'Aluminum Glass Railing',
+    location: 'Vijayawada',
+    image: projAlekhyaGrand
+  },
+  {
+    id: 'proj-cllaro-urban-grandeur',
+    title: 'Cllaro Urban Grandeur',
+    category: 'Aluminum Glass Railing',
+    location: 'Mira Road, Mumbai',
+    image: projCllaroUrbanGrandeur
+  },
+  {
+    id: 'proj-mm-lakecity',
+    title: 'MM LakeCity',
+    category: 'Aluminum Glass Railing',
+    location: 'Vapi',
+    image: projMMLakeCity
+  },
+  {
+    id: 'proj-team4-nyla',
+    title: 'Team4 Nyla',
+    category: 'Aluminum Glass Railing',
+    location: 'Hyderabad',
+    image: projTeam4Nyla
   }
 ];
 

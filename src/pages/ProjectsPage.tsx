@@ -55,19 +55,24 @@ export default function ProjectsPage() {
 
         {/* Photo-only Grid Gallery */}
         <div className="max-w-7xl mx-auto px-6 py-16">
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-5 sm:gap-5">
             {PROJECTS.map((project) => (
-              <div
-                key={project.id}
-                className="group relative aspect-square overflow-hidden bg-gray-100"
-              >
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
-                  referrerPolicy="no-referrer"
-                  loading="lazy"
-                />
+              <div key={project.id} className="group space-y-2">
+                <div className="relative aspect-square overflow-hidden bg-gray-100">
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
+                    referrerPolicy="no-referrer"
+                    loading="lazy"
+                  />
+                </div>
+                <div>
+                  <p className="font-sans text-lg font-bold text-gray-900 leading-snug">
+                    {project.title}
+                  </p>
+                  <p className="font-sans text-md text-gray-500">{project.location}</p>
+                </div>
               </div>
             ))}
           </div>

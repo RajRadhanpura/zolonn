@@ -107,7 +107,7 @@ export default function Footer() {
             <div className="space-y-4 text-sm text-gray-300 font-regular">
               <div className="flex items-start space-x-2.5">
                 <MapPin className="w-4 h-4 text-gold-500 shrink-0 mt-0.5" />
-                <span className='font-sans text-gray-300'>Survey No.202, Plot No.20, Narmada Pipe Gate, Essen Road, Industrial Area, Veraval(Shapar), Rajkot, Gujarat – 360024</span>
+                <span className='font-sans text-gray-300'>Vrundawan Gate, 2 & 3, Rajkot - Gondal Hwy, near Innovative Mould Works, opp. Leuva Patel Samaj, Pipaliya, Gujarat 360311.</span>
               </div>
               <div className="flex items-start space-x-2.5">
                 <Phone className="w-4 h-4 text-gold-500 shrink-0 mt-0.5" />
