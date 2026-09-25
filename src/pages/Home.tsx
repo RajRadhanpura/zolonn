@@ -60,7 +60,7 @@ export default function Home() {
       {/* <ProductShowcase /> */}
 
       {/* Parallax Building Metrics */}
-      {/* <StatsBanner /> */}
+      {/* <StatsBanner /> */}``
 
       {/* High-End Architectural Advantages */}
       {/* <WhyZolon /> */}

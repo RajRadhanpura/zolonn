@@ -19,15 +19,10 @@ const QUICK_LINKS = [
 ];
 
 const PRODUCT_CATEGORIES = [
-  { label: 'Continue Systems', category: 'continue-systems' },
-  { label: 'Profile System', category: 'profile-system' },
-  { label: 'Bracket Cover System', category: 'bracket-cover-system' },
-  { label: 'Bracket System', category: 'glass-fittings' },
-  { label: 'Handrail & Accessories', category: 'handrail-accessories' },
-  { label: 'Aluminium Spigots', category: 'aluminium-spigots' },
-  { label: 'Balustrade System', category: 'balustrade-system' },
-  { label: 'Side Mount', category: 'side-mount' },
-  { label: 'Spigot', category: 'spigot' }
+  { label: 'Aluminium Railing System', category: 'continue-systems' },
+  { label: 'S.S Railing System' },
+  { label: 'Architectural Glass Hardware', category: 'glass-fittings' },
+  { label: 'Slim Partitions System' }
 ];
 
 export default function Footer() {

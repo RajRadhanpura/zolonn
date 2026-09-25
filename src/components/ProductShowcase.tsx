@@ -10,32 +10,99 @@ import { PRODUCTS } from '../data';
 import ProductCard from './ProductCard';
 import { Search, SlidersHorizontal, Layers, Sparkles } from 'lucide-react';
 
-type FilterCategory = 'all' | 'continue-systems' | 'profile-system' | 'aluminium-baluster' | 'bracket-cover-system' | 'glass-fittings' | 'handrail-accessories' | 'aluminium-spigots' | 'balustrade-system' | 'side-mount' | 'spigot';
+type FilterCategory = 'all' | 'continue-systems' | 'aluminium-baluster' | 'bracket-system' | 'bracket-cover-system' | 'handrail-accessories' | 'aluminium-spigots' | 'balustrade-system' | 'side-mount' | 'spigot' | 'glass-fittings';
 
-const VALID_CATEGORIES: FilterCategory[] = ['all', 'continue-systems', 'profile-system', 'aluminium-baluster', 'bracket-cover-system', 'glass-fittings', 'handrail-accessories', 'aluminium-spigots', 'balustrade-system', 'side-mount', 'spigot'];
+interface MainCategory {
+  label: string;
+  /** Sub-tabs shown under this main category. Empty means the main tab filters directly. */
+  subcategories: { label: string; value: FilterCategory }[];
+  /** Used only when there are no subcategories — the data category this main tab filters to. */
+  dataCategory?: FilterCategory;
+}
+
+const MAIN_CATEGORIES: MainCategory[] = [
+  {
+    label: 'Aluminium Railing System',
+    subcategories: [
+      { label: 'Continue Systems', value: 'continue-systems' },
+      { label: 'Aluminium Baluster', value: 'aluminium-baluster' },
+      { label: 'Bracket Cover System', value: 'bracket-cover-system' },
+      { label: 'Handrail & Accessories', value: 'handrail-accessories' },
+      { label: 'Glass Fittings', value: 'glass-fittings' },
+      { label: 'Aluminium Spigots', value: 'aluminium-spigots' }
+    ]
+  },
+  {
+    label: 'S.S Railing System',
+    subcategories: [
+      { label: 'Balustrade System', value: 'balustrade-system' },
+      { label: 'Side Mount', value: 'side-mount' },
+      { label: 'Spigot', value: 'spigot' }
+    ]
+  },
+  {
+    label: 'Architectural Glass Hardware',
+    subcategories: [],
+  },
+  {
+    label: 'Slim Partitions System',
+    subcategories: []
+    // No dataCategory yet — the client hasn't supplied products for this range.
+  }
+];
+
+const VALID_CATEGORIES: FilterCategory[] = [
+  'all',
+  ...MAIN_CATEGORIES.flatMap((main) =>
+    main.subcategories.length > 0 ? main.subcategories.map((s) => s.value) : main.dataCategory ? [main.dataCategory] : []
+  )
+];
+
+// Finds which main tab (and sub-tab, if any) a given leaf category value belongs to.
+function findMainIndex(category: FilterCategory): { mainIndex: number; sub: FilterCategory } {
+  for (let i = 0; i < MAIN_CATEGORIES.length; i++) {
+    const main = MAIN_CATEGORIES[i];
+    if (main.subcategories.some((s) => s.value === category)) return { mainIndex: i, sub: category };
+    if (main.dataCategory === category) return { mainIndex: i, sub: 'all' };
+  }
+  return { mainIndex: 0, sub: 'all' };
+}
 
 const PAGE_SIZE = 18;
 
 export default function ProductShowcase() {
   const [searchParams] = useSearchParams();
   const categoryFromUrl = searchParams.get('category');
-  const initialCategory: FilterCategory =
+  const initial =
     categoryFromUrl && (VALID_CATEGORIES as string[]).includes(categoryFromUrl)
-      ? (categoryFromUrl as FilterCategory)
-      : 'all';
+      ? findMainIndex(categoryFromUrl as FilterCategory)
+      : { mainIndex: 0, sub: 'all' as FilterCategory };
 
-  const [selectedCategory, setSelectedCategory] = useState<FilterCategory>(initialCategory);
+  const [selectedMain, setSelectedMain] = useState(initial.mainIndex);
+  const [selectedSub, setSelectedSub] = useState<FilterCategory>(initial.sub);
   const [searchQuery, setSearchQuery] = useState('');
   const [visibleCount, setVisibleCount] = useState(PAGE_SIZE);
+
+  const activeMain = MAIN_CATEGORIES[selectedMain];
 
   // Keep the filter in sync if the URL's category param changes after mount
   // (e.g. navigating here again from a footer link while already on /products)
   useEffect(() => {
     const cat = searchParams.get('category');
     if (cat && (VALID_CATEGORIES as string[]).includes(cat)) {
-      setSelectedCategory(cat as FilterCategory);
+      const { mainIndex, sub } = findMainIndex(cat as FilterCategory);
+      setSelectedMain(mainIndex);
+      setSelectedSub(sub);
     }
   }, [searchParams]);
+
+  // The set of data categories the current selection should match.
+  const activeCategories = useMemo<FilterCategory[]>(() => {
+    if (activeMain.subcategories.length === 0) {
+      return activeMain.dataCategory ? [activeMain.dataCategory] : [];
+    }
+    return selectedSub === 'all' ? activeMain.subcategories.map((s) => s.value) : [selectedSub];
+  }, [activeMain, selectedSub]);
 
   const scrollerRef = useRef<HTMLDivElement>(null);
   const dragState = useRef({ isDragging: false, startX: 0, startScrollLeft: 0, moved: false });
@@ -64,33 +131,20 @@ export default function ProductShowcase() {
     dragState.current.isDragging = false;
   };
 
-  const categories: { label: string; value: FilterCategory }[] = [
-    { label: 'All', value: 'all' },
-    { label: 'Continue Systems', value: 'continue-systems' },
-    { label: 'Aluminium Baluster', value: 'aluminium-baluster' },
-    { label: 'Bracket Cover System', value: 'bracket-cover-system' },
-    { label: 'Bracket System', value: 'glass-fittings' },
-    { label: 'Handrail & Accessories', value: 'handrail-accessories' },
-    { label: 'Aluminium Spigots', value: 'aluminium-spigots' },
-    { label: 'Balustrade System', value: 'balustrade-system' },
-    { label: 'Side Mount', value: 'side-mount' },
-    { label: 'Spigot', value: 'spigot' }
-  ];
-
   const filteredProducts = useMemo(() => {
     return PRODUCTS.filter((product) => {
-      const matchesCategory = selectedCategory === 'all' || product.category === selectedCategory;
+      const matchesCategory = activeCategories.includes(product.category as FilterCategory);
       const matchesSearch = product.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
         product.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
         product.specs.material.toLowerCase().includes(searchQuery.toLowerCase());
       return matchesCategory && matchesSearch;
     });
-  }, [selectedCategory, searchQuery]);
+  }, [activeCategories, searchQuery]);
 
   // Reset pagination whenever the active filters change
   useEffect(() => {
     setVisibleCount(PAGE_SIZE);
-  }, [selectedCategory, searchQuery]);
+  }, [activeCategories, searchQuery]);
 
   const visibleProducts = filteredProducts.slice(0, visibleCount);
   const hasMore = visibleCount < filteredProducts.length;
@@ -160,31 +214,64 @@ export default function ProductShowcase() {
             )}
           </div>
 
-          {/* Categories Tab Selectors */}
-          <div
-            ref={scrollerRef}
-            onMouseDown={handleDragStart}
-            onMouseMove={handleDragMove}
-            onMouseUp={handleDragEnd}
-            onMouseLeave={handleDragEnd}
-            className="flex items-center overflow-x-auto no-scrollbar -mx-6 px-6 lg:mx-0 lg:px-0 space-x-2 pb-2 lg:pb-0 cursor-grab active:cursor-grabbing select-none"
-          >
-            {categories.map((cat) => (
+          {/* Main Category Tabs (4 only, full width) */}
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-2">
+            {MAIN_CATEGORIES.map((main, idx) => (
               <button
-                key={cat.label}
+                key={main.label}
+                onClick={() => {
+                  setSelectedMain(idx);
+                  setSelectedSub('all');
+                }}
+                className={`font-sans px-5 py-3 text-xs font-bold tracking-wider uppercase rounded-sm text-center transition-all duration-300 cursor-pointer ${selectedMain === idx
+                  ? 'bg-gray-900 text-white shadow-sm'
+                  : 'bg-gray-50 text-gray-700 hover:bg-gold-50 hover:text-gold-600'
+                  }`}
+              >
+                {main.label}
+              </button>
+            ))}
+          </div>
+
+          {/* Sub-category Selectors for the active main category */}
+          {activeMain.subcategories.length > 0 && (
+            <div
+              ref={scrollerRef}
+              onMouseDown={handleDragStart}
+              onMouseMove={handleDragMove}
+              onMouseUp={handleDragEnd}
+              onMouseLeave={handleDragEnd}
+              className="flex items-center overflow-x-auto no-scrollbar -mx-6 px-6 lg:mx-0 lg:px-0 space-x-2 pb-2 lg:pb-0 cursor-grab active:cursor-grabbing select-none"
+            >
+              <button
                 onClick={() => {
                   if (dragState.current.moved) return;
-                  setSelectedCategory(cat.value);
+                  setSelectedSub('all');
                 }}
-                className={`font-sans px-4 py-2 text-xs font-semibold tracking-wider uppercase rounded-sm whitespace-nowrap transition-all duration-300 cursor-pointer ${selectedCategory === cat.value
+                className={`font-sans px-4 py-2 text-xs font-semibold tracking-wider uppercase rounded-sm whitespace-nowrap transition-all duration-300 cursor-pointer ${selectedSub === 'all'
                   ? 'bg-gold-500 text-white shadow-sm'
                   : 'bg-gray-50 text-gray-700 hover:bg-gold-50 hover:text-gold-600'
                   }`}
               >
-                {cat.label}
+                All
               </button>
-            ))}
-          </div>
+              {activeMain.subcategories.map((sub) => (
+                <button
+                  key={sub.label}
+                  onClick={() => {
+                    if (dragState.current.moved) return;
+                    setSelectedSub(sub.value);
+                  }}
+                  className={`font-sans px-4 py-2 text-xs font-semibold tracking-wider uppercase rounded-sm whitespace-nowrap transition-all duration-300 cursor-pointer ${selectedSub === sub.value
+                    ? 'bg-gold-500 text-white shadow-sm'
+                    : 'bg-gray-50 text-gray-700 hover:bg-gold-50 hover:text-gold-600'
+                    }`}
+                >
+                  {sub.label}
+                </button>
+              ))}
+            </div>
+          )}
         </div>
 
         {/* Dynamic Products Grid with Staggered Animations */}
@@ -224,13 +311,18 @@ export default function ProductShowcase() {
             className="bg-gray-50 border border-gray-100 p-16 text-center rounded-sm max-w-lg mx-auto"
           >
             <SlidersHorizontal className="w-8 h-8 text-gold-500 mx-auto mb-4" />
-            <h3 className="font-sans font-bold text-base text-gray-900">No Matching Products Found</h3>
-            {/* <p className="font-sans text-xs text-gray-500 mt-2">
-              We couldn't find hardware fitting your search query. Try typing alloy grades like "2205", "brass", or general keywords.
-            </p> */}
+            <h3 className="font-sans font-bold text-base text-gray-900">
+              {activeCategories.length === 0 ? 'Coming Soon' : 'No Matching Products Found'}
+            </h3>
+            {activeCategories.length === 0 && (
+              <p className="font-sans text-xs text-gray-500 mt-2">
+                Products for this category will be added soon.
+              </p>
+            )}
             <button
               onClick={() => {
-                setSelectedCategory('all');
+                setSelectedMain(0);
+                setSelectedSub('all');
                 setSearchQuery('');
               }}
               className="mt-6 bg-gray-900 text-white font-sans font-semibold text-xs tracking-wider uppercase px-5 py-2.5 rounded-sm hover:bg-gold-500 transition-colors cursor-pointer"
