@@ -9,11 +9,11 @@ import { ArrowLeft, ArrowRight, Award, Calendar, Globe2, Users, Quote, ShieldChe
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import SEO from '../components/SEO';
-import photo1 from '../assets/products/photo1.jpg';
 import photo2 from '../assets/products/photo2.jpg';
 import photo3 from '../assets/products/photo3.jpg';
 import certificate1 from '../assets/certificate1.jpg';
 import certificate2 from '../assets/certificate2.jpg';
+import companyImg from '../assets/company.jpeg';
 
 const CERTIFICATES = [
   { img: certificate1, title: 'Test Summary — ASTM E2353 Load Tests' },
@@ -76,8 +76,16 @@ export default function AboutZolonPage() {
         </div>
 
         {/* Who We Are */}
-        <section className="max-w-6xl mx-auto px-6 py-16 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-          <div className="lg:col-span-7 space-y-6">
+        <section className="max-w-6xl mx-auto px-6 py-16 space-y-10">
+          <div className="w-full overflow-hidden bg-gray-100 border border-gray-200 flex items-center justify-center">
+            <img
+              src={companyImg}
+              alt="ZOLON Architectural Hardware Craftsmanship"
+              className="w-full h-auto object-contain"
+              referrerPolicy="no-referrer"
+            />
+          </div>
+          <div className="space-y-6">
             <span className="font-sans text-[10px] tracking-[0.25em] text-gold-600 font-bold uppercase block">
               Who We Are
             </span>
@@ -88,16 +96,6 @@ export default function AboutZolonPage() {
             <p className="font-sans text-sm text-gray-700 leading-relaxed font-medium">
               ZOLON has been an innovative and professional company engaged in research, manufacture and marketing of fittings for railing systems, architectural hardware and bathroom accessories. ZOLON provides fittings of high quality and provides consulting services to the architectural industries. Through many years since development, ZOLON achieves a good reputation in Construction Industry and Hardware Industry.
             </p>
-          </div>
-          <div className="lg:col-span-5">
-            <div className="aspect-[4/5] overflow-hidden bg-gray-100 border border-gray-200">
-              <img
-                src={photo1}
-                alt="ZOLON Architectural Hardware Craftsmanship"
-                className="w-full h-full object-cover"
-                referrerPolicy="no-referrer"
-              />
-            </div>
           </div>
         </section>
 
