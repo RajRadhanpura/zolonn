@@ -17,14 +17,22 @@ export default function ContactForm() {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
+  const [error, setError] = useState('');
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setError('');
 
-    // Simulate premium backend API submit
-    setTimeout(() => {
-      setIsSubmitting(false);
+    try {
+      const res = await fetch('/api/send-contact.php', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData)
+      });
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok || !data.ok) throw new Error(data.error || 'Request failed');
+
       setIsSuccess(true);
       setFormData({
         name: '',
@@ -33,7 +41,11 @@ export default function ContactForm() {
         projectType: 'Luxury Residential',
         message: ''
       });
-    }, 1500);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Something went wrong. Please try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -207,6 +219,8 @@ export default function ContactForm() {
                     />
                   </div>
 
+                  {error && <p className="font-sans text-xs text-red-600">{error}</p>}
+
                   {/* Submit Button */}
                   <button
                     type="submit"
@@ -242,18 +256,6 @@ export default function ContactForm() {
                     </h3>
                     <p className="font-sans text-xs text-gray-600 max-w-md mx-auto leading-relaxed">
                       Thank you for contacting the Zolon Hardware specifications desk. A senior architectural hardware consultant will review your parameters and respond via email within 4 hours.
-                    </p>
-                  </div>
-
-                  <div className="bg-emerald-50/50 border border-emerald-100 p-4 rounded-none max-w-sm text-left">
-                    <span className="font-sans text-[9px] tracking-wider text-emerald-800 font-bold uppercase block">
-                      Assigned Ticket Code
-                    </span>
-                    <p className="font-mono text-xs text-emerald-700 font-semibold mt-1">
-                      ZH-SPEC-2026-{(Math.random() * 10000).toFixed(0)}
-                    </p>
-                    <p className="font-sans text-[10px] text-gray-500 mt-1">
-                      A confirmation has been sent to your provided inbox.
                     </p>
                   </div>
 
