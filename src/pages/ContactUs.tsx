@@ -58,8 +58,8 @@ export default function ContactUs() {
               </div>
               <div>
                 <h4 className="font-sans font-bold text-xs text-gray-800 tracking-wider uppercase">Call Us</h4>
-                <p className="font-sans text-sm text-gray-900 font-medium mt-1">+91-972 756 0994</p>
-                <p className="font-sans text-sm text-gray-900 font-medium">+91-903 351 3331</p>
+                <p className="font-sans text-sm text-gray-900 font-medium mt-1">+91 966 225 5163</p>
+                <p className="font-sans text-sm text-gray-900 font-medium">+91 903 351 3331</p>
               </div>
             </div>
 
