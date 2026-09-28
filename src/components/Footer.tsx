@@ -19,10 +19,10 @@ const QUICK_LINKS = [
 ];
 
 const PRODUCT_CATEGORIES = [
-  { label: 'Aluminium Railing System', category: 'continue-systems' },
-  { label: 'S.S Railing System' },
-  { label: 'Architectural Glass Hardware', category: 'glass-fittings' },
-  { label: 'Slim Partitions System' }
+  { label: 'Aluminium Railing System', category: 'aluminium-railing-system' },
+  { label: 'S.S Railing System', category: 'ss-railing-system' },
+  { label: 'Architectural Glass Hardware', category: null },
+  { label: 'Slim Partitions System', category: null }
 ];
 
 export default function Footer() {
@@ -84,9 +84,9 @@ export default function Footer() {
             <h4 className="font-sans font-bold text-xs tracking-widest text-gray-300 uppercase">Product Categories</h4>
             <ul className="space-y-3.5 text-sm text-gray-300 font-regular">
               {PRODUCT_CATEGORIES.map((cat) => (
-                <li key={cat.category}>
+                <li key={cat.label}>
                   <Link
-                    to={`/products?category=${cat.category}`}
+                    to={cat.category ? `/products?category=${cat.category}` : '/products'}
                     className="font-sans text-gray-300 hover:text-gold-500 transition-colors text-left"
                   >
                     {cat.label}
@@ -106,7 +106,11 @@ export default function Footer() {
               </div>
               <div className="flex items-start space-x-2.5">
                 <Phone className="w-4 h-4 text-gold-500 shrink-0 mt-0.5" />
-                <span className='font-sans text-gray-300'>+91-903 351 3331</span>
+                <span className='font-sans text-gray-300'>+91 903 351 3331</span>
+              </div>
+              <div className="flex items-start space-x-2.5">
+                <Phone className="w-4 h-4 text-gold-500 shrink-0 mt-0.5" />
+                <span className='font-sans text-gray-300'>+91 966 225 5163</span>
               </div>
               <div className="flex items-start space-x-2.5">
                 <Mail className="w-4 h-4 text-gold-500 shrink-0 mt-0.5" />

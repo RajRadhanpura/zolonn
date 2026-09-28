@@ -14,6 +14,7 @@ import ProductsPage from './pages/ProductsPage';
 import ArchitecturalHardwarePage from './pages/ArchitecturalHardwarePage';
 import AboutZolonPage from './pages/AboutZolonPage';
 import EventsPage from './pages/EventsPage';
+import CataloguePage from './pages/CataloguePage';
 import { useScrollReveal } from './hooks/useScrollReveal';
 
 export default function App() {
@@ -30,6 +31,7 @@ export default function App() {
       <Route path="/architectural-hardware-in-rajkot" element={<ArchitecturalHardwarePage />} />
       <Route path="/about-zolon" element={<AboutZolonPage />} />
       <Route path="/events" element={<EventsPage />} />
+      <Route path="/catalogue" element={<CataloguePage />} />
     </Routes>
   );
 }

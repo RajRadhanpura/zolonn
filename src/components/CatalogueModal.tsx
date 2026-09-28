@@ -11,13 +11,15 @@ import { X, CheckCircle2, Info } from 'lucide-react';
 interface CatalogueModalProps {
   open: boolean;
   onClose: () => void;
+  catalogueKey?: string;
+  catalogueTitle?: string;
 }
 
 const EMPTY = { name: '', email: '', phone: '' };
 
 const ENDPOINT = '/api/send-catalogue.php';
 
-export default function CatalogueModal({ open, onClose }: CatalogueModalProps) {
+export default function CatalogueModal({ open, onClose, catalogueKey, catalogueTitle }: CatalogueModalProps) {
   const [form, setForm] = useState(EMPTY);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
@@ -52,7 +54,7 @@ export default function CatalogueModal({ open, onClose }: CatalogueModalProps) {
       const res = await fetch(ENDPOINT, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(form)
+        body: JSON.stringify({ ...form, catalogue: catalogueKey })
       });
       const data = await res.json().catch(() => ({}));
       if (!res.ok || !data.ok) throw new Error(data.error || 'Request failed');
@@ -103,7 +105,8 @@ export default function CatalogueModal({ open, onClose }: CatalogueModalProps) {
                   Thank you
                 </h3>
                 <p className="font-sans text-sm text-gray-600 leading-relaxed">
-                  We will send the catalogue link to <strong>{form.email}</strong> shortly.
+                  We will send the {catalogueTitle ? `${catalogueTitle} ` : ''}catalogue link to{' '}
+                  <strong>{form.email}</strong> shortly.
                 </p>
                 <button
                   onClick={close}
@@ -116,7 +119,7 @@ export default function CatalogueModal({ open, onClose }: CatalogueModalProps) {
               <form onSubmit={handleSubmit} className="space-y-5">
                 <div className="space-y-2">
                   <h3 className="font-sans font-bold text-lg uppercase tracking-tight text-gray-900">
-                    Download Catalogue
+                    {catalogueTitle ? `Download ${catalogueTitle}` : 'Download Catalogue'}
                   </h3>
                   <div className="h-0.5 w-12 bg-gold-500" />
                 </div>

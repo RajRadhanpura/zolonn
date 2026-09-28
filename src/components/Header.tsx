@@ -123,12 +123,12 @@ export default function Header() {
 
           {/* Consultation Button */}
           <div className="hidden lg:flex items-center space-x-6">
-            <button
-              onClick={() => setIsCatalogueOpen(true)}
+            <Link
+              to="/catalogue"
               className="bg-gold-500 hover:bg-gold-600 text-white font-sans font-semibold text-xs tracking-wider uppercase px-5 py-2.5 rounded-sm transition-all shadow-sm hover:shadow-md hover:-translate-y-0.5"
             >
               Download Catalogue
-            </button>
+            </Link>
           </div>
 
           {/* Mobile Menu Toggle */}
@@ -224,15 +224,13 @@ export default function Header() {
               >
                 Contact Us
               </Link>
-              <button
-                onClick={() => {
-                  setIsMobileMenuOpen(false);
-                  setIsCatalogueOpen(true);
-                }}
-                className="mt-4 w-full bg-gold-500 hover:bg-gold-600 text-white font-sans font-bold text-sm tracking-widest uppercase py-4 rounded-sm text-center transition-all shadow-md"
+              <Link
+                to="/catalogue"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="mt-4 w-full bg-gold-500 hover:bg-gold-600 text-white font-sans font-bold text-sm tracking-widest uppercase py-4 rounded-sm text-center transition-all shadow-md block"
               >
                 Download Catalogue
-              </button>
+              </Link>
             </div>
 
             {/* <div className="space-y-6 border-t border-gray-100 pt-8">
