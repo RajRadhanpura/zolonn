@@ -10,33 +10,33 @@ import { Link } from 'react-router-dom';
 export const WHY_ZOLON_POINTS = [
   {
     icon: ShieldAlert,
-    title: 'Duplex 2205 Metallurgical Superiority',
-    description: 'Twice the yield strength of ordinary 316 stainless steel. Standardized in all glass spigots to combat extreme tension stress and high salt-spray coastal environments without rusting.'
-  },
-  {
-    icon: Scale,
-    title: '0.1mm CNC Micro-Forging',
-    description: 'Forged at thousands of tons of pressure and micro-CNC milled to eliminate loose tolerances, ensuring heavy glass doors and structural partitions glide with zero vibration.'
+    title: 'Heavy-Duty & Reliable',
+    description: 'Built from premium-grade materials to withstand daily wear, heavy loads, and demanding site conditions, so every fitting performs reliably for years without failure.'
   },
   {
     icon: Sparkles,
-    title: 'Titanium PVD Molecular Finish',
-    description: 'Physical Vapor Deposition bonds pure gold-titanium alloys directly onto the molecular level of our metals. Guaranteed never to chip, flake, or tarnish over decades of use.'
-  },
-  {
-    icon: Compass,
-    title: 'Total AutoCAD & BIM Integration',
-    description: 'We supply custom Revit models, AutoCAD spec blocks, and accurate glass-drilling template sheets to eliminate contractor guesswork on active job sites.'
+    title: 'Modern Architectural Design',
+    description: 'Clean lines and a contemporary aesthetic that complement modern interiors and facades, helping architects and designers achieve a refined, minimalist look.'
   },
   {
     icon: Hammer,
-    title: '500,000+ Cycle Longevity Testing',
-    description: 'Our hydraulic hinges, glass door rollers, and heavy deadbolt lock cylinders undergo millions of continuous stress cycles to earn premium commercial grade-1 certifications.'
+    title: 'Timely Dispatch & Delivery',
+    description: 'A streamlined production and logistics process ensures orders are dispatched and delivered on schedule, keeping your project timelines on track.'
+  },
+  {
+    icon: Compass,
+    title: 'Complete Architectural Solutions',
+    description: 'From aluminium railings and glass fittings to slim partition systems, Zolon offers a comprehensive range under one roof.'
+  },
+  {
+    icon: Scale,
+    title: 'Project & Technical Support',
+    description: 'Our team provides hands-on technical guidance and on-ground project support, helping architects, contractors and installers get every specification right.'
   },
   {
     icon: Award,
-    title: 'Bespoke Architectural Engineering',
-    description: 'Tailored consulting to meet local building safety codes for high-load glass barriers, commercial handrails, and luxury master bath frameless setups.'
+    title: 'Customisation Capability',
+    description: 'Tailored finishes, dimensions, and configurations to match unique project requirements, delivering fittings that fit your exact design intent.'
   }
 ];
 
